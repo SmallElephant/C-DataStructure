@@ -55,6 +55,27 @@ char *str_sub(char *s1, int pos, int len) { // 字符串截取
     return head;
 }
 
+int index_substring(char *source, char *sub) {
+    int len = str_length(source);
+    int len2 = str_length(sub);
+    if (len < len2) {
+        return -1;
+    }
+    int pos = -1;
+    for (int i = 0; i < len; i++) {
+        for (int j = 0; j < len2; j++) {
+            if (source[i+j] != sub[j]) {
+                break;
+            }
+            if (j == (len2-1)) {
+                pos = i;
+                break;
+            }
+        }
+    }
+    return pos;
+}
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -74,5 +95,7 @@ int main(int argc, const char * argv[]) {
     printf("字符串拼接的结果:%s\n",result);
     char *sub = str_sub("abcdefg", 1, 2);
     printf("截取的结果:%s\n",sub);
+    int pos = index_substring("abcdefg", "def");
+    printf("子字符串中的位置:%d\n",pos);
     return 0;
 }
