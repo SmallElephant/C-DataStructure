@@ -76,6 +76,70 @@ int index_substring(char *source, char *sub) {
     return pos;
 }
 
+int index_match(char *s, char *p) {
+    int sLen = str_length(s);
+    int pLen = str_length(p);
+    if (sLen < pLen) {
+        return -1;
+    }
+    int i = 0;
+    int j = 0;
+    while (i < sLen && j < pLen) {
+        if (s[i] == p[j]) {
+            i++;
+            j++;
+        } else {
+            i = i - j + 1;
+            j = 0;
+        }
+    }
+    if (j == pLen) {
+        return i - j;
+    } else {
+        return -1;
+    }
+}
+
+void getNext(char *pattern, int *next)
+{
+    int j = -1;
+    int len = str_length(pattern);
+    for (int i = 0; i < len; i++) {
+        while (j > 0 && pattern[i] != pattern[j]) {
+            j = next[j - 1];
+        }
+        if (j == -1 || pattern[i] == pattern[j]) { // j = -1 第一个匹配的字符串长度是0
+            j++;
+        }
+        next[i] = j;
+    }
+}
+
+int kmp_match(char *s, char *p) {
+    int sLen = str_length(s);
+    int pLen = str_length(p);
+    if (sLen < pLen) {
+        return -1;
+    }
+    int i = 0;
+    int j = 0;
+    int *next = (int *)malloc((pLen + 1) * sizeof(int));
+    getNext(p, next);
+    while (i < sLen && j < pLen) {
+        if (s[i] == p[j]) {
+            i++;
+            j++;
+        } else {
+            j = next[j];
+        }
+    }
+    if (j == pLen) {
+        return i - j;
+    } else {
+        return -1;
+    }
+}
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -97,5 +161,14 @@ int main(int argc, const char * argv[]) {
     printf("截取的结果:%s\n",sub);
     int pos = index_substring("abcdefg", "def");
     printf("子字符串中的位置:%d\n",pos);
+    int pos1 = index_match("abcdefg", "def");
+    printf("子字符串中的位置:%d\n",pos1);
+    int next[10] = {0};
+    char *pattern = "abababca";
+    GetNext(pattern, next);
+    for (int i = 0 ; i < str_length(pattern); i++) {
+        printf("%d\t",next[i]);
+    }
+    printf("\n");
     return 0;
 }
