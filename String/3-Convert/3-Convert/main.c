@@ -47,6 +47,30 @@ double strToDouble(char *str) {
     return sign * res * pow(10.0, digit);
 }
 
+int findMoreHalfNumber(int a[], int n) {
+    int num = 0;
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (count == 0) { //如果count为0，代表前面的数字正好全部抵消了
+            num = a[i]; //current重新设定为当前遍历到的值
+            count = 1;
+        } else {
+            if (num == a[i]) { //current等于当前遍历到的值 count++
+                count++;
+            } else { //current不等于当前遍历到的值 抵消 count--
+                count--;
+            }
+        }
+    }
+    count = 0; // count = 0 需要进行重新验证，不能直接返回num
+    for (int i = 0; i < n; i++) {
+        if (a[i] == num) {
+            count++;
+        }
+    }
+    return count > n / 2 ? num : 0;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     char *str = "1234";
@@ -57,5 +81,8 @@ int main(int argc, const char * argv[]) {
     printf("FlyElephant转换结果:%f\n",res2);
     double test = pow(10.0, -2);
     printf("pow结果:%f\n",test);
+    int a[] = {1,2,3,2,2,2,5,4,2};
+    int half = findMoreHalfNumber(a, 9);
+    printf("中间的数值:%d\n",half);
     return 0;
 }
