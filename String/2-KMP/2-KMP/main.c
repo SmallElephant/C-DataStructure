@@ -158,7 +158,7 @@ int main(int argc, const char * argv[]) {
     char *pattern = "bca";
     int index = kmp_indexVal(str, pattern);
     printf("%s在%s中的匹配位置:%d\n",pattern,str,index);
-    char *str1 = "aaaab";
+    char *str1 = "abaabcac";
     int next[100] = {0};
     getNext(str1, next);
     for (int i = 0; i < strlen(str1); i++) {
