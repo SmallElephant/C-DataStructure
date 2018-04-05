@@ -47,6 +47,7 @@ double strToDouble(char *str) {
     return sign * res * pow(10.0, digit);
 }
 
+//http://blademastercoder.github.io/2015/02/04/leetcode-MajorityElement.html
 int findMoreHalfNumber(int a[], int n) {
     int num = 0;
     int count = 0;
