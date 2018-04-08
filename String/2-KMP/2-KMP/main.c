@@ -102,6 +102,35 @@ int kmp_index(char *s, char *p) {
     }
 }
 
+int kmp_indexOfPos(char *s, char *p, int pos) {
+    int sLen = (int)strlen(s);
+    int pLen = (int)strlen(p);
+    if (sLen < pLen) {
+        return -1;
+    }
+    int i = pos;
+    int j = 0;
+    int next[100] = {0};
+    getNext(p, next);
+    for (int i = 0; i < strlen(p); i++) {
+        printf("%d\t", next[i]);
+    }
+    printf("\n");
+    while (i < sLen && j < pLen) {
+        if (j == -1 || s[i] == p[j]) {
+            i++;
+            j++;
+        } else {
+            j = next[j];
+        }
+    }
+    if (j >= pLen) {
+        return i - pLen;
+    } else {
+        return -1;
+    }
+}
+
 void getNextVal(char *p, int *next) {
     int j = 0;
     int k = -1; // 字符串真前缀和真后缀的匹配的最大长度
@@ -171,5 +200,10 @@ int main(int argc, const char * argv[]) {
         printf("%d\t", nextVal[i]);
     }
     printf("\n");
+    
+    char *str2 = "abcdabcefhm";
+    char *pattern2 = "cef";
+    int pos = kmp_indexOfPos(str2, pattern2, 2);
+    printf("kmp_indexOfPos position:%d\n",pos);
     return 0;
 }

@@ -30,6 +30,29 @@ void replaceStr(char *str, char *pattern, char *replace) {
     }
 }
 
+//实现串str的逆转函数，如果str为空串，则什么都不做
+
+void reverseStr(char str[]) {
+    int len = (int)strlen(str);
+    for (int i = 0; i < len / 2; i++) {
+        char temp = str[i];
+        str[i] = str[len - i - 1];
+        str[len - i - 1] = temp;
+    }
+}
+
+//删除str中值为ch的所有字符，如果str为空串，或者串中不含值为ch的字符，则什么都不做.
+
+void deleteStr(char str[], char ch) {
+    int j = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] != ch) {
+            str[j++] = str[i];
+        }
+    }
+    str[j] = '\0';
+}
+
 
 int main(int argc, const char * argv[]) {
 //     char *str = "FlyElephant"; // 字符串常量，针对某个字符修改，报错
@@ -38,10 +61,13 @@ int main(int argc, const char * argv[]) {
     char replace[] = "Zhong";
     replaceStr(str, pattern, replace);
     printf("replace result:%s\n",str);
-//    char str[] = "Hello world!";
-//    for (char* p = str; p = strchr(p, 'l'); ++p) {
-//        *p = 'E';
-//    }
-//     printf("%s\n", str);  // He11o wor1d!
+    
+    char reStr[] = "abcd";
+    reverseStr(reStr);
+    printf("reverse result:%s\n", reStr);
+    
+    char delStr[] = "abcdeeffggee";
+    deleteStr(delStr, 'e');
+    printf("delete result:%s\n", delStr);
     return 0;
 }
