@@ -53,6 +53,18 @@ void deleteStr(char str[], char ch) {
     str[j] = '\0';
 }
 
+void deleteStrFromPos(char str[], int pos, int len) {
+    int sLen = (int)strlen(str);
+    if (pos + len >= sLen) {
+        str[pos] = '\0';
+    } else {
+        for (int i = pos + len; i < sLen; i++) {
+            str[pos++] = str[i];
+        }
+        str[pos] = '\0';
+    }
+}
+
 
 int main(int argc, const char * argv[]) {
 //     char *str = "FlyElephant"; // 字符串常量，针对某个字符修改，报错
@@ -69,5 +81,9 @@ int main(int argc, const char * argv[]) {
     char delStr[] = "abcdeeffggee";
     deleteStr(delStr, 'e');
     printf("delete result:%s\n", delStr);
+    
+    char delPostion[] = "abcdefhijk";
+    deleteStrFromPos(delPostion, 3, 3);
+    printf("delete string from postion:%s\n",delPostion);
     return 0;
 }
