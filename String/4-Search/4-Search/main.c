@@ -53,6 +53,8 @@ void deleteStr(char str[], char ch) {
     str[j] = '\0';
 }
 
+//采用定长顺序存储表示串，编写一个函数，删除串中从下标i的字符开始，如果第i字符开始么有组从的j个字符，则有几个删除几个.
+
 void deleteStrFromPos(char str[], int pos, int len) {
     int sLen = (int)strlen(str);
     if (pos + len >= sLen) {
@@ -62,6 +64,22 @@ void deleteStrFromPos(char str[], int pos, int len) {
             str[pos++] = str[i];
         }
         str[pos] = '\0';
+    }
+}
+
+//采用顺序存储方式存储串，编写一个函数，将串str1中的下标i到下标j之间的子串（包含i和j两个位置上的字符）用str2串替换.
+
+void replaceStrFromPos(char str[], int start, int end, char restr[]) {
+    int sLen = (int)strlen(str);
+    if (start >= sLen || end >= sLen) {
+        return;
+    }
+    int j = 0;
+    int relen = (int)strlen(restr);
+    for (int i = start; i <= end; i++) {
+        if (j < relen) {
+            str[i] = restr[j++];
+        }
     }
 }
 
@@ -85,5 +103,10 @@ int main(int argc, const char * argv[]) {
     char delPostion[] = "abcdefhijk";
     deleteStrFromPos(delPostion, 3, 3);
     printf("delete string from postion:%s\n",delPostion);
+    
+    char origin[] = "abcdefghijk";
+    char originRe[] = "fly";
+    replaceStrFromPos(origin, 2, 4, originRe);
+    printf("replace string from postion:%s\n",origin);
     return 0;
 }
