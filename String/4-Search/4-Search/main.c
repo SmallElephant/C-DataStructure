@@ -83,6 +83,31 @@ void replaceStrFromPos(char str[], int start, int end, char restr[]) {
     }
 }
 
+// 统计子串出现的次数,不考虑子串重叠，比如串aaaa，子串aaa考虑重叠出现的次数是2，不考虑是1
+int numberOfSubstr(char str[], char subStr[]) {
+    int i = 0;
+    int k = 0;
+    int j = 0;
+    int sum = 0;
+    int sLen = (int)strlen(str);
+    int subLen = (int)strlen(subStr);
+    while (i < sLen) {
+        if (str[i] == subStr[j]) {
+            i++;
+            j++;
+        } else {
+            k++;
+            j = 0;
+            i = k;
+        }
+        if (j >= subLen) {
+            j = 0;
+            sum++;
+        }
+    }
+    return sum;
+}
+
 
 int main(int argc, const char * argv[]) {
 //     char *str = "FlyElephant"; // 字符串常量，针对某个字符修改，报错
@@ -108,5 +133,10 @@ int main(int argc, const char * argv[]) {
     char originRe[] = "fly";
     replaceStrFromPos(origin, 2, 4, originRe);
     printf("replace string from postion:%s\n",origin);
+    
+    char countStr[] = "aaaa";
+    char countSubStr[] = "aaa";
+    int sum = numberOfSubstr(countStr, countSubStr);
+    printf("%s count in %s number is:%d\n",countSubStr, countStr, sum);
     return 0;
 }
