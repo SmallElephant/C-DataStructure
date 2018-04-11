@@ -33,11 +33,44 @@ void moveElement(int data[], int n) {
     }
 }
 
+int findMax(int data[], int i, int j) {
+    if (i == j) {
+        return data[i];
+    } else {
+        int max = findMax(data, i + 1, j);
+        return data[i] > max ? data[i] : max;
+    }
+}
+
+int findSum(int data[], int i, int j) {
+    if (i == j) {
+        return data[i];
+    } else {
+        int sum = findSum(data, i + 1, j);
+        return data[i] + sum;
+    }
+}
+
+float findAverage(int data[], int i, int j) {
+    if (i == j) {
+        return data[i];
+    } else {
+        float average = findAverage(data, i + 1, j);
+        return (data[i] + average * (j - i)) / (j - i + 1);
+    }
+}
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     int data[] = {1,0,2,0,3,0,4,0,0,0,5,6};
     moveElement(data, 12);
     printData(data, 12);
+    
+    int max = findMax(data, 0, 11);
+    printf("max value:%d\n",max);
+    int sum = findSum(data, 0, 11);
+    printf("sum value:%d\n",sum);
+    float average = findAverage(data, 0, 11);
+    printf("average number value:%f\n",average);
     return 0;
 }
