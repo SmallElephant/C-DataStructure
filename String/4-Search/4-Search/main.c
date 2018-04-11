@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 //1.将串str中所有值为ch1的字符串转换成ch2的字符，如果str为空串，或者串中不含值为ch1的字符，则什么都不做
 
@@ -108,6 +109,25 @@ int numberOfSubstr(char str[], char subStr[]) {
     return sum;
 }
 
+char findFirstChar(char str1[], char str2[]) {
+    int len1 = (int)strlen(str1);
+    int len2 = (int)strlen(str2);
+    char res = '\0';
+    for (int i = 0; i < len1; i++) {
+        bool isExist = false;
+        for (int j = 0; j < len2; j++) {
+            if (str1[i] == str2[j]) {
+                isExist = true;
+            }
+        }
+        if (!isExist) {
+            res = str1[i];
+            break;
+        }
+    }
+    return res;
+}
+
 
 int main(int argc, const char * argv[]) {
 //     char *str = "FlyElephant"; // 字符串常量，针对某个字符修改，报错
@@ -138,5 +158,10 @@ int main(int argc, const char * argv[]) {
     char countSubStr[] = "aaa";
     int sum = numberOfSubstr(countStr, countSubStr);
     printf("%s count in %s number is:%d\n",countSubStr, countStr, sum);
+    
+    char findStr1[] = "abcdefg";
+    char findStr2[] = "abc";
+    char findRes = findFirstChar(findStr1, findStr2);
+    printf("%s first not in %s is %c\n",findStr1,findStr2,findRes);
     return 0;
 }
