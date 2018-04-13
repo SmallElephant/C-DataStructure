@@ -48,6 +48,22 @@ int getDepth(BTNode *root) {
     }
 }
 
+BTNode *search(BTNode *root,char key) {
+    if (root != NULL) {
+        if (root->data == key) {
+            return root;
+        } else {
+            BTNode *res = search(root->leftNode, key);
+            if (res != NULL) {
+                return res;
+            } else {
+                return search(root->rightNode, key);
+            }
+        }
+    }
+    return NULL;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     BTNode root = {'A',NULL,NULL};
@@ -72,5 +88,9 @@ int main(int argc, const char * argv[]) {
     printf("\n");
     int treeDepth = getDepth(&root);
     printf("tree depth:%d\n",treeDepth);
+    BTNode *searchRes = search(&root, 'E');
+    if (searchRes != NULL) {
+        printf("exist node value:%c\n",searchRes->data);
+    }
     return 0;
 }
