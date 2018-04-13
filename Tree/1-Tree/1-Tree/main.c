@@ -38,6 +38,16 @@ void postOrder(BTNode *root) {
     }
 }
 
+int getDepth(BTNode *root) {
+    if (root == NULL) {
+        return 0;
+    } else {
+        int leftDepth = getDepth(root->leftNode);
+        int rightDepth = getDepth(root->rightNode);
+        return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     BTNode root = {'A',NULL,NULL};
@@ -60,5 +70,7 @@ int main(int argc, const char * argv[]) {
     printf("后序遍历结果:\n");
     postOrder(&root);
     printf("\n");
+    int treeDepth = getDepth(&root);
+    printf("tree depth:%d\n",treeDepth);
     return 0;
 }
