@@ -64,6 +64,30 @@ BTNode *search(BTNode *root,char key) {
     return NULL;
 }
 
+void level(BTNode *root, int maxSize) { // 数组实现循环队列功能，需要预留一个空间，不然无法进行队满和队空的判断
+    int front = 0;
+    int rear = 0;
+    BTNode *queue[maxSize];
+    if (root != NULL) {
+        queue[rear] = root; // 初始元素入队列
+        rear = (rear + 1) % maxSize;
+        while (front != rear) {
+            BTNode *node = queue[front];
+            front = (front + 1) % maxSize;
+            printf("%c\t",node->data);
+            if (node->leftNode != NULL) {
+                queue[rear] = node->leftNode;
+                rear = (rear + 1) % maxSize;
+            }
+            if (node->rightNode != NULL) {
+                queue[rear] = node->rightNode;
+                rear = (rear + 1) % maxSize;
+            }
+        }
+    }
+    printf("\n");
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     BTNode root = {'A',NULL,NULL};
@@ -86,6 +110,7 @@ int main(int argc, const char * argv[]) {
     printf("后序遍历结果:\n");
     postOrder(&root);
     printf("\n");
+    level(&root, 7);
     int treeDepth = getDepth(&root);
     printf("tree depth:%d\n",treeDepth);
     BTNode *searchRes = search(&root, 'E');
