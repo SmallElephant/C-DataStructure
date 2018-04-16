@@ -88,6 +88,53 @@ void level(BTNode *root, int maxSize) { // 数组实现循环队列功能，需�
     printf("\n");
 }
 
+typedef struct LevelNode {
+    BTNode *node;
+    int level;
+} LevelNode;
+
+int getBinaryTreeWidth(BTNode *root, int maxSize) {
+    if (root != NULL) {
+        LevelNode queue[maxSize];
+        int front = 0;
+        int rear = 0;
+        int max = 0;
+        int level = 0;
+        queue[rear].node = root;
+        queue[rear].level = 1;
+        rear++;
+        while (front != rear) {
+            BTNode *node = queue[front].node;
+            level = queue[front].level;
+            front++;
+            if (node->leftNode != NULL) {
+                queue[rear].node = node->leftNode;
+                queue[rear].level = level + 1;
+                rear++;
+            }
+            if (node->rightNode != NULL) {
+                queue[rear].node = node->rightNode;
+                queue[rear].level = level + 1;
+                rear++;
+            }
+        }
+        for (int i = 1; i <= level; i++) {
+            int n = 0;
+            for (int j = 0; j < maxSize; j++) {
+                if (queue[j].level == i) {
+                    n++;
+                }
+            }
+            if (n > max) {
+                max = n;
+            }
+        }
+        return max;
+    } else {
+        return 0;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     BTNode root = {'A',NULL,NULL};
@@ -111,6 +158,8 @@ int main(int argc, const char * argv[]) {
     postOrder(&root);
     printf("\n");
     level(&root, 7);
+    int treeWidth = getBinaryTreeWidth(&root, 7);
+    printf("当前二叉树的宽度是%d\n",treeWidth);
     int treeDepth = getDepth(&root);
     printf("tree depth:%d\n",treeDepth);
     BTNode *searchRes = search(&root, 'E');
