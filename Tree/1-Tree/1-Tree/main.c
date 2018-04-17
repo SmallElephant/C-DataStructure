@@ -23,5 +23,6 @@ int main(int argc, const char * argv[]) {
     bNode.rightNode = &eNode;
     preOrderNonRecursive(&root, 6);
     inOrderNonRecursive(&root, 6);
+    postOrderNonRecursive(&root, 6);
     return 0;
 }

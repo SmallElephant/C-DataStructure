@@ -27,3 +27,4 @@ int getBinaryTreeWidth(BTNode *root, int maxSize);
 
 void preOrderNonRecursive(BTNode *root,int maxSize);
 void inOrderNonRecursive(BTNode *root, int maxSize);
+void postOrderNonRecursive(BTNode *root, int maxSize);

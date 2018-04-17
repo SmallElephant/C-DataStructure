@@ -195,6 +195,32 @@ void inOrderNonRecursive(BTNode *root, int maxSize) {
     }
 }
 
+void postOrderNonRecursive(BTNode *root, int maxSize) {
+    if (root != NULL) {
+        BTNode *stack1[maxSize];
+        BTNode *stack2[maxSize];
+        int top1 = -1;
+        int top2 = -1;
+        BTNode *node;
+        stack1[++top1] = root;
+        while (top1 >= 0) {
+            node = stack1[top1--];
+            stack2[++top2] = node;
+            if (node->leftNode != NULL) {
+                stack1[++top1] = node->leftNode;
+            }
+            if (node->rightNode != NULL) {
+                stack1[++top1] = node->rightNode;
+            }
+        }
+        while (top2 >= 0) {
+            node = stack2[top2--];
+            printf("%c\t",node->data);
+        }
+        printf("\n");
+    }
+}
+
 
 
 
