@@ -15,6 +15,7 @@
 #include "CustomStruct.h"
 
 void testTreeMethod(void);
+void testBinaryNonRecursive(void);
 
 void preOrder(BTNode *root);
 void inOrder(BTNode *root);
@@ -28,3 +29,17 @@ int getBinaryTreeWidth(BTNode *root, int maxSize);
 void preOrderNonRecursive(BTNode *root,int maxSize);
 void inOrderNonRecursive(BTNode *root, int maxSize);
 void postOrderNonRecursive(BTNode *root, int maxSize);
+
+void inThread(TBTNode *p);
+void createInThread(TBTNode *root);
+TBTNode *First(TBTNode *p);
+TBTNode *Next(TBTNode *p);
+void threadInOrder(TBTNode *root);
+
+void createPreThread(TBTNode *root);
+void preThread(TBTNode *p);
+void threadPreOrder(TBTNode *root);
+
+void createPostThread(TBTNode *p);
+void postThread(TBTNode *p);
+void threadPostOrder(TBTNode *p);

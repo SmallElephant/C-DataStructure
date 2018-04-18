@@ -23,3 +23,11 @@ typedef struct LevelNode {
     BTNode *node;
     int level;
 } LevelNode;
+
+typedef struct TBTNode {
+    char data;
+    struct TBTNode *leftChild;
+    struct TBTNode *rightChild;
+    int leftTag;
+    int rightTag;
+} TBTNode;

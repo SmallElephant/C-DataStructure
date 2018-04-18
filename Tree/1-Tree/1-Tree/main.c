@@ -12,17 +12,37 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
     testTreeMethod();
-    BTNode root = {'1',NULL,NULL};
-    BTNode bNode = {'2',NULL,NULL};
-    BTNode cNode = {'4',NULL,NULL};
-    BTNode dNode = {'3',NULL,NULL};
-    BTNode eNode = {'5',NULL,NULL};
-    root.leftNode = &bNode;
-    root.rightNode = &cNode;
-    bNode.leftNode = &dNode;
-    bNode.rightNode = &eNode;
-    preOrderNonRecursive(&root, 6);
-    inOrderNonRecursive(&root, 6);
-    postOrderNonRecursive(&root, 6);
+    // preOrder: A B D C E
+    TBTNode root = {'A',NULL,NULL};
+    TBTNode bNode = {'B',NULL,NULL};
+    TBTNode cNode = {'C',NULL,NULL};
+    TBTNode dNode = {'D',NULL,NULL};
+    TBTNode eNode = {'E',NULL,NULL};
+    root.leftChild = &bNode;
+    root.rightChild = &cNode;
+    bNode.rightChild = &dNode;
+    cNode.leftChild = &eNode;
+//    createInThread(&root);
+//    TBTNode *first = First(&root);
+//    if (first != NULL) {
+//        printf("inOrder first node value:%c\n",first->data);
+//    }
+//    TBTNode *next = Next(&dNode);
+//    if (next != NULL) {
+//        printf("inorder current node next value:%c\n",next->data);
+//    }
+//    threadInOrder(&root);
+    
+//    createPreThread(&root);
+//    if (dNode.rightChild != NULL) {
+//        printf("dnode right value:%c\n",dNode.rightChild->data);
+//    }
+//    threadPreOrder(&root);
+    
+    createPostThread(&root);
+    if (dNode.rightChild != NULL) {
+        printf("dnode right value:%c\n",dNode.rightChild->data);
+    }
+    threadPostOrder(&root);
     return 0;
 }

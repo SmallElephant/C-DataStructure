@@ -40,6 +40,21 @@ void testTreeMethod() {
     }
 }
 
+void testBinaryNonRecursive() {
+    BTNode root = {'1',NULL,NULL};
+    BTNode bNode = {'2',NULL,NULL};
+    BTNode cNode = {'4',NULL,NULL};
+    BTNode dNode = {'3',NULL,NULL};
+    BTNode eNode = {'5',NULL,NULL};
+    root.leftNode = &bNode;
+    root.rightNode = &cNode;
+    bNode.leftNode = &dNode;
+    bNode.rightNode = &eNode;
+    preOrderNonRecursive(&root, 6);
+    inOrderNonRecursive(&root, 6);
+    postOrderNonRecursive(&root, 6);
+}
+
 void preOrder(BTNode *root) {
     if (root) {
         printf("%c\t",root->data);
@@ -221,6 +236,137 @@ void postOrderNonRecursive(BTNode *root, int maxSize) {
     }
 }
 
+TBTNode *pre = NULL;
+void createInThread(TBTNode *root) {
+    if (root != NULL) {
+        inThread(root);
+        pre->rightChild = NULL; //非空二叉树线索化
+        pre->rightTag = 1; // 处理最后一个节点
+    }
+}
 
+void inThread(TBTNode *p) {
+    if (p != NULL) {
+        inThread(p->leftChild);
+        if (p->leftChild == NULL) {
+            p->leftChild = pre;
+            p->leftTag = 1; // 0表示节点本身指向的leftChild，1表示当前节点的前驱节点
+        }
+        if (pre != NULL && pre->rightChild == NULL) {
+            pre->rightChild = p;
+            pre->rightTag = 1; // 0表示节点本身指向的rightChild，1表示当前的节点的后继节点
+        }
+        pre = p;
+        inThread(p->rightChild);
+    }
+}
+
+TBTNode *First(TBTNode *p) {
+    while (p->leftTag == 0) {
+        p = p->leftChild;
+    }
+    return p;
+}
+
+TBTNode *Next(TBTNode *p) {
+    if (p->rightTag == 0) {
+        return First(p->rightChild);
+    } else {
+        return p->rightChild; // rightTag == 1 直接返回当前节点
+    }
+}
+
+void threadInOrder(TBTNode *root) {
+    printf("thread in order:");
+    for (TBTNode *p = First(root); p != NULL; p = Next(p)) {
+        printf("%c\t",p->data);
+    }
+    printf("\n");
+}
+
+void createPreThread(TBTNode *root) {
+    if (root != NULL) {
+        preThread(root);
+        pre->rightChild = NULL; //非空二叉树线索化
+        pre->rightTag = 1; // 处理最后一个节点
+    }
+}
+
+void preThread(TBTNode *p) {
+    if (p != NULL) {
+        if (p->leftChild == NULL) {
+            p->leftChild = pre;
+            p->leftTag = 1;
+        }
+        if (pre != NULL && pre->rightChild == NULL) {
+            pre->rightChild = p;
+            pre->rightTag = 1;
+        }
+        pre = p;
+        if (p->leftTag == 0) { //左右指针不是线索化才能继续执行递归操作
+            preThread(p->leftChild);
+        }
+        if (p->rightTag == 0) {
+            preThread(p->rightChild);
+        }
+    }
+}
+
+void threadPreOrder(TBTNode *root) {
+    if (root != NULL) {
+        TBTNode *p = root;
+        while (p != NULL) {
+            while (p->leftTag == 0) {
+                printf("%c\t",p->data);
+                p = p->leftChild;
+            }
+            printf("%c\t",p->data);
+            p = p->rightChild;
+        }
+        printf("\n");
+    }
+}
+
+void createPostThread(TBTNode *p) {
+    if (p != NULL) {
+        postThread(p);
+    }
+}
+
+void postThread(TBTNode *p) {
+    if (p != NULL) {
+        postThread(p->leftChild);
+        postThread(p->rightChild);
+        if (p->leftChild == NULL) {
+            p->leftChild = pre;
+            p->leftTag = 1;
+        }
+        if (pre != NULL && pre->rightChild == NULL) {
+            pre->rightChild = p;
+            pre->rightTag = 1;
+        }
+        pre = p;
+    }
+}
+
+// 后序D B E C A 逆后序结果:A    C    E    B    D
+void threadPostOrder(TBTNode *root) { // D B E C A
+    if (root != NULL) {
+        TBTNode *p = root;
+        while (p != NULL) {
+            while (p && p->rightTag == 0) {
+                printf("%c\t",p->data);
+                p = p->rightChild;
+            }
+            printf("%c\t",p->data);
+            while (p->leftChild && p->leftTag == 1) {
+                p = p->leftChild;
+                printf("%c\t",p->data);
+            }
+            p = p->leftChild;
+        }
+        printf("\n");
+    }
+}
 
 
