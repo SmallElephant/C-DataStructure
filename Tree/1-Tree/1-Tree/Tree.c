@@ -55,6 +55,41 @@ void testBinaryNonRecursive() {
     postOrderNonRecursive(&root, 6);
 }
 
+void testThreadMethod() {
+//    preOrder: A B D C E
+    TBTNode root = {'A',NULL,NULL};
+    TBTNode bNode = {'B',NULL,NULL};
+    TBTNode cNode = {'C',NULL,NULL};
+    TBTNode dNode = {'D',NULL,NULL};
+    TBTNode eNode = {'E',NULL,NULL};
+    root.leftChild = &bNode;
+    root.rightChild = &cNode;
+    bNode.rightChild = &dNode;
+    cNode.leftChild = &eNode;
+    createInThread(&root);
+    TBTNode *first = First(&root);
+    if (first != NULL) {
+        printf("inOrder first node value:%c\n",first->data);
+    }
+    TBTNode *next = Next(&dNode);
+    if (next != NULL) {
+        printf("inorder current node next value:%c\n",next->data);
+    }
+    threadInOrder(&root);
+
+    createPreThread(&root);
+    if (dNode.rightChild != NULL) {
+        printf("dnode right value:%c\n",dNode.rightChild->data);
+    }
+    threadPreOrder(&root);
+
+    createPostThread(&root);
+    if (dNode.rightChild != NULL) {
+        printf("dnode right value:%c\n",dNode.rightChild->data);
+    }
+    threadPostOrder(&root);
+}
+
 void preOrder(BTNode *root) {
     if (root) {
         printf("%c\t",root->data);
@@ -128,6 +163,49 @@ void level(BTNode *root, int maxSize) { // 数组实现循环队列功能，需�
     }
     printf("\n");
 }
+
+BTNode *createBTree(char pre[],char in[], int preLeft, int preRight, int inLeft, int inRight) {
+    if (preLeft > preRight) {
+        return NULL;
+    }
+    BTNode *s = (BTNode *)malloc(sizeof(BTNode));
+    s->leftNode = NULL;
+    s->rightNode = NULL;
+    char root = pre[preLeft];
+    int i;
+    for (i = inLeft; i <= inRight; i++) {
+        if (in[i] == root) {
+            break;
+        }
+    }
+    s->data = in[i];
+    s->leftNode = createBTree(pre, in, preLeft + 1, preLeft + i - inLeft, inLeft, i - 1);
+    s->rightNode = createBTree(pre, in, preLeft + i - inLeft + 1, preRight, i + 1, inRight);
+    return s;
+}
+
+BTNode *createBTTreePost(char post[], char in[], int postLeft, int postRight, int inLeft, int inRight) {
+    if (postLeft > postRight) {
+        return NULL;
+    }
+    BTNode *s = (BTNode *)malloc(sizeof(BTNode));
+    s->leftNode = NULL;
+    s->rightNode = NULL;
+    char root = post[postRight];
+    int i;
+    for (i = inLeft; i <= inRight; i++) {
+        if (in[i] == root) {
+            break;
+        }
+    }
+    s->data = root;
+    // D B E A F C in
+    // D E B F C A post
+    s->leftNode = createBTTreePost(post, in, postLeft, postLeft + i - inLeft - 1, inLeft, i - 1);
+    s->rightNode = createBTTreePost(post, in, postLeft + i - inLeft, postRight - 1, i + 1, inRight);
+    return s;
+}
+
 
 int getBinaryTreeWidth(BTNode *root, int maxSize) {
     if (root != NULL) {
@@ -368,5 +446,7 @@ void threadPostOrder(TBTNode *root) { // D B E C A
         printf("\n");
     }
 }
+
+
 
 

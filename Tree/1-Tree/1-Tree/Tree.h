@@ -10,12 +10,14 @@
 #define Tree_h
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #endif /* Tree_h */
 #include "CustomStruct.h"
 
 void testTreeMethod(void);
 void testBinaryNonRecursive(void);
+void testThreadMethod(void);
 
 void preOrder(BTNode *root);
 void inOrder(BTNode *root);
@@ -25,6 +27,9 @@ int getDepth(BTNode *root);
 BTNode *search(BTNode *root,char key);
 void level(BTNode *root, int maxSize);
 int getBinaryTreeWidth(BTNode *root, int maxSize);
+
+BTNode *createBTree(char pre[],char in[], int preLeft, int preRight, int inLeft, int inRight);
+BTNode *createBTTreePost(char post[], char in[], int postLeft, int postRight, int inLeft, int inRight);
 
 void preOrderNonRecursive(BTNode *root,int maxSize);
 void inOrderNonRecursive(BTNode *root, int maxSize);

@@ -12,37 +12,18 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
     testTreeMethod();
-    // preOrder: A B D C E
-    TBTNode root = {'A',NULL,NULL};
-    TBTNode bNode = {'B',NULL,NULL};
-    TBTNode cNode = {'C',NULL,NULL};
-    TBTNode dNode = {'D',NULL,NULL};
-    TBTNode eNode = {'E',NULL,NULL};
-    root.leftChild = &bNode;
-    root.rightChild = &cNode;
-    bNode.rightChild = &dNode;
-    cNode.leftChild = &eNode;
-//    createInThread(&root);
-//    TBTNode *first = First(&root);
-//    if (first != NULL) {
-//        printf("inOrder first node value:%c\n",first->data);
-//    }
-//    TBTNode *next = Next(&dNode);
-//    if (next != NULL) {
-//        printf("inorder current node next value:%c\n",next->data);
-//    }
-//    threadInOrder(&root);
-    
-//    createPreThread(&root);
-//    if (dNode.rightChild != NULL) {
-//        printf("dnode right value:%c\n",dNode.rightChild->data);
-//    }
-//    threadPreOrder(&root);
-    
-    createPostThread(&root);
-    if (dNode.rightChild != NULL) {
-        printf("dnode right value:%c\n",dNode.rightChild->data);
-    }
-    threadPostOrder(&root);
+//    testThreadMethod();
+    // 先序 A B D E C F
+    // 中序 D B E A F C
+    // 后序 D E B F C A
+    char pre[] = {'A','B','D','E','C','F'};
+    char in[] = {'D','B','E','A','F','C'};
+    char post[] = {'D','E','B','F','C','A'};
+    BTNode *s = createBTree(pre, in, 0, 5, 0, 5);
+    postOrder(s);
+    printf("\n");
+    BTNode *postTree= createBTTreePost(post, in, 0, 5, 0, 5);
+    preOrder(postTree);
+    printf("\n");
     return 0;
 }
