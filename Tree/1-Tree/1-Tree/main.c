@@ -29,5 +29,7 @@ int main(int argc, const char * argv[]) {
     level(postTree, 6);
     int count = countNode(s);
     printf("tree node count:%d\n",count);
+    int leafCount = leafNodeCount(s);
+    printf("leaf node count:%d\n",leafCount);
     return 0;
 }

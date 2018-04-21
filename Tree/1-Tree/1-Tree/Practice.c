@@ -60,4 +60,14 @@ int countNode(BTNode *node) {
     }
 }
 
-
+int leafNodeCount(BTNode *node) {
+    if (node == NULL) {
+        return 0;
+    } else if (node->leftNode == NULL && node->rightNode == NULL) {
+        return 1;
+    } else {
+        int leftCount = leafNodeCount(node->leftNode);
+        int rightCount = leafNodeCount(node->rightNode);
+        return leftCount + rightCount;
+    }
+}
