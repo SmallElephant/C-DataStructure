@@ -22,4 +22,9 @@ int countNode(BTNode *node);
 int leafNodeCount(BTNode *node);
 
 void linkLeafNode(BTNode *node);
-void printLeafNodeLink();
+void printLeafNodeLink(void);
+
+void updateParentTree(BTParentNode *cur, BTParentNode *par);
+void printParentNodePath(BTParentNode *node);
+void printParentAllPath(BTParentNode *root);
+

@@ -98,3 +98,30 @@ void printLeafNodeLink() {
     }
 }
 
+void updateParentTree(BTParentNode *cur, BTParentNode *par) {
+    if (cur == NULL) {
+        return;
+    }
+    cur->parentNode = par;
+    par = cur;
+    updateParentTree(cur->leftNode, par);
+    updateParentTree(cur->rightNode, par);
+}
+
+void printParentNodePath(BTParentNode *node) {
+    while (node != NULL) {
+        printf("%c->",node->data);
+        node = node->parentNode;
+    }
+    printf("\n");
+}
+
+void printParentAllPath(BTParentNode *root) {
+    if (root != NULL) {
+        printParentNodePath(root);
+        printParentAllPath(root->leftNode);
+        printParentAllPath(root->rightNode);
+    }
+}
+
+

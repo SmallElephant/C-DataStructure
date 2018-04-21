@@ -33,5 +33,19 @@ int main(int argc, const char * argv[]) {
     printf("leaf node count:%d\n",leafCount);
     linkLeafNode(s);
     printLeafNodeLink();
+    BTParentNode *root = NULL;
+    BTParentNode node = {'A',NULL,NULL,NULL};
+    BTParentNode bNode = {'B',NULL,NULL,NULL};
+    BTParentNode cNode = {'C',NULL,NULL,NULL};
+    BTParentNode dNode = {'D',NULL,NULL,NULL};
+    BTParentNode eNode = {'E',NULL,NULL,NULL};
+    node.leftNode = &bNode;
+    node.rightNode = &cNode;
+    bNode.rightNode = &dNode;
+    cNode.leftNode = &eNode;
+    root = &node;
+    updateParentTree(root, NULL);
+    printParentNodePath(&dNode);
+    printParentAllPath(root);
     return 0;
 }

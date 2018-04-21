@@ -30,6 +30,13 @@ typedef struct TBTNode {
     int rightTag;
 } TBTNode;
 
+typedef struct BTParentNode {
+    char data;
+    struct BTParentNode *parentNode;
+    struct BTParentNode *leftNode;
+    struct BTParentNode *rightNode;
+} BTParentNode;
+
 #endif /* CustomStruct_h */
 
 
