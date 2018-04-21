@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8276FBF2080A01800119443 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A8276FBE2080A01800119443 /* main.c */; };
+		A84E4EBC208B62460059BB0A /* Practice.c in Sources */ = {isa = PBXBuildFile; fileRef = A84E4EBA208B62460059BB0A /* Practice.c */; };
 		A8C4561C2086147B0041A193 /* Tree.c in Sources */ = {isa = PBXBuildFile; fileRef = A8C4561A2086147B0041A193 /* Tree.c */; };
 		A8C4561F208615320041A193 /* CustomStruct.c in Sources */ = {isa = PBXBuildFile; fileRef = A8C4561D208615320041A193 /* CustomStruct.c */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		A8276FBB2080A01800119443 /* 1-Tree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "1-Tree"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8276FBE2080A01800119443 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		A84E4EBA208B62460059BB0A /* Practice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Practice.c; sourceTree = "<group>"; };
+		A84E4EBB208B62460059BB0A /* Practice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Practice.h; sourceTree = "<group>"; };
 		A8C4561A2086147B0041A193 /* Tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Tree.c; sourceTree = "<group>"; };
 		A8C4561B2086147B0041A193 /* Tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
 		A8C4561D208615320041A193 /* CustomStruct.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CustomStruct.c; sourceTree = "<group>"; };
@@ -68,6 +71,8 @@
 				A8C4561B2086147B0041A193 /* Tree.h */,
 				A8C4561D208615320041A193 /* CustomStruct.c */,
 				A8C4561E208615320041A193 /* CustomStruct.h */,
+				A84E4EBA208B62460059BB0A /* Practice.c */,
+				A84E4EBB208B62460059BB0A /* Practice.h */,
 			);
 			path = "1-Tree";
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 			files = (
 				A8276FBF2080A01800119443 /* main.c in Sources */,
 				A8C4561C2086147B0041A193 /* Tree.c in Sources */,
+				A84E4EBC208B62460059BB0A /* Practice.c in Sources */,
 				A8C4561F208615320041A193 /* CustomStruct.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

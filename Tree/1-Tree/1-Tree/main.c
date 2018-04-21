@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "Tree.h"
+#include "Practice.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -25,5 +26,8 @@ int main(int argc, const char * argv[]) {
     BTNode *postTree= createBTTreePost(post, in, 0, 5, 0, 5);
     preOrder(postTree);
     printf("\n");
+    level(postTree, 6);
+    int count = countNode(s);
+    printf("tree node count:%d\n",count);
     return 0;
 }

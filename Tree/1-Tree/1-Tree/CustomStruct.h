@@ -11,8 +11,6 @@
 
 #include <stdio.h>
 
-#endif /* CustomStruct_h */
-
 typedef struct BTNode {
     char data;
     struct BTNode *leftNode;
@@ -31,3 +29,7 @@ typedef struct TBTNode {
     int leftTag;
     int rightTag;
 } TBTNode;
+
+#endif /* CustomStruct_h */
+
+
