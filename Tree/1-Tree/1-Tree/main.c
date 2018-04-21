@@ -31,5 +31,7 @@ int main(int argc, const char * argv[]) {
     printf("tree node count:%d\n",count);
     int leafCount = leafNodeCount(s);
     printf("leaf node count:%d\n",leafCount);
+    linkLeafNode(s);
+    printLeafNodeLink();
     return 0;
 }

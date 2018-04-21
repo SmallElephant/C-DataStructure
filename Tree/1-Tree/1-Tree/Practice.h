@@ -19,5 +19,7 @@ BTNode *createBTTreePost(char post[], char in[], int postLeft, int postRight, in
 
 // 统计二叉树的叶子节点数量
 int countNode(BTNode *node);
-
 int leafNodeCount(BTNode *node);
+
+void linkLeafNode(BTNode *node);
+void printLeafNodeLink();

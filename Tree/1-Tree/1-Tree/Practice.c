@@ -71,3 +71,30 @@ int leafNodeCount(BTNode *node) {
         return leftCount + rightCount;
     }
 }
+
+BTNode *linkHead = NULL;
+BTNode *linkTail = NULL;
+
+void linkLeafNode(BTNode *node) {
+    if (node == NULL) {
+        return;
+    }
+    if (node->leftNode == NULL && node->rightNode == NULL) {
+        if (linkHead == NULL) {
+            linkHead = node;
+            linkTail = node;
+        } else {
+            linkTail->rightNode = node;
+            linkTail = node;
+        }
+    }
+    linkLeafNode(node->leftNode);
+    linkLeafNode(node->rightNode);
+}
+
+void printLeafNodeLink() {
+    if (linkHead != NULL && linkTail != NULL) {
+        printf("link head value:%c---link tail value:%c\n",linkHead->data,linkTail->data);
+    }
+}
+
