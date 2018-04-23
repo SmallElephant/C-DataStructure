@@ -17,6 +17,8 @@
 
 void testPath(void);
 
+void testDoubleOrder(void);
+
 BTNode *createBTree(char pre[],char in[], int preLeft, int preRight, int inLeft, int inRight);
 BTNode *createBTTreePost(char post[], char in[], int postLeft, int postRight, int inLeft, int inRight);
 
@@ -36,4 +38,6 @@ void changePreToPost(char pre[],char post[],int preLeft,int preRight,int postLef
 void levelNode(BTNode *p, char x);
 
 int levelNode2(BTNode *p, char x, int level);
+
+void doubleOrder(BTNode *root);
 

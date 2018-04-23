@@ -57,6 +57,11 @@ void testBinaryNonRecursive() {
 
 void testThreadMethod() {
 //    preOrder: A B D C E
+    //    A
+    // B      C
+    //   D  E
+    // inOrder B D A E C
+    // postOrder D B E C A
     TBTNode root = {'A',NULL,NULL};
     TBTNode bNode = {'B',NULL,NULL};
     TBTNode cNode = {'C',NULL,NULL};
@@ -75,19 +80,23 @@ void testThreadMethod() {
     if (next != NULL) {
         printf("inorder current node next value:%c\n",next->data);
     }
+    TBTNode *last = InOrderLastNode(&root);
+    if (last != NULL) {
+        printf("inorder last node value:%c\n",last->data);
+    }
     threadInOrder(&root);
 
-    createPreThread(&root);
-    if (dNode.rightChild != NULL) {
-        printf("dnode right value:%c\n",dNode.rightChild->data);
-    }
-    threadPreOrder(&root);
-
-    createPostThread(&root);
-    if (dNode.rightChild != NULL) {
-        printf("dnode right value:%c\n",dNode.rightChild->data);
-    }
-    threadPostOrder(&root);
+//    createPreThread(&root);
+//    if (dNode.rightChild != NULL) {
+//        printf("dnode right value:%c\n",dNode.rightChild->data);
+//    }
+//    threadPreOrder(&root);
+//
+//    createPostThread(&root);
+//    if (dNode.rightChild != NULL) {
+//        printf("dnode right value:%c\n",dNode.rightChild->data);
+//    }
+//    threadPostOrder(&root);
 }
 
 void preOrder(BTNode *root) {
@@ -299,6 +308,13 @@ void inThread(TBTNode *p) {
 TBTNode *First(TBTNode *p) {
     while (p->leftTag == 0) {
         p = p->leftChild;
+    }
+    return p;
+}
+
+TBTNode *InOrderLastNode(TBTNode *p) {
+    while (p && p->rightTag == 0) {
+        p = p->rightChild;
     }
     return p;
 }

@@ -44,6 +44,42 @@ void testPath() {
     printParentAllPath(root);
 }
 
+void testDoulbeOrder() {
+    //    A    B    E    D    C    F    G
+    //    E    D    B    F    G    C    A
+    BTNode root = {'A',NULL,NULL};
+    BTNode bNode = {'B',NULL,NULL};
+    BTNode cNode = {'C',NULL,NULL};
+    BTNode dNode = {'D',NULL,NULL};
+    BTNode eNode = {'E',NULL,NULL};
+    BTNode fNode = {'F',NULL,NULL};
+    BTNode gNode = {'G',NULL,NULL};
+    root.leftNode = &bNode;
+    root.rightNode = &cNode;
+    bNode.rightNode = &dNode;
+    bNode.leftNode = &eNode;
+    cNode.leftNode = &fNode;
+    cNode.rightNode = &gNode;
+    preOrder(&root);
+    printf("\n");
+    postOrder(&root);
+    printf("\n");
+    char pre[] = {'A','B','E','D','C','F','G'};
+    char post[] = {'\0','\0','\0','\0','\0','\0','\0'};
+    changePreToPost(pre, post, 0, 6, 0, 6);
+    for (int i = 0; i < 7; i++) {
+        printf("%c\t",post[i]);
+    }
+    printf("\n");
+    levelNode(&root, 'D');
+    int level = levelNode2(&root, 'D', 1);
+    printf("D level is %d\n",level);
+    preOrder(&root);
+    printf("\n");
+    doubleOrder(&root);
+    printf("\n");
+}
+
 BTNode *createBTree(char pre[],char in[], int preLeft, int preRight, int inLeft, int inRight) {
     if (preLeft > preRight) {
         return NULL;
@@ -199,6 +235,15 @@ int levelNode2(BTNode *p, char x, int level) {
         return right;
     }
     return -1;
+}
+
+void doubleOrder(BTNode *root) {
+    if (root != NULL) {
+        printf("%c  ",root->data);
+        doubleOrder(root->leftNode);
+        printf("%c  ",root->data);
+        doubleOrder(root->rightNode);
+    }
 }
 
 
