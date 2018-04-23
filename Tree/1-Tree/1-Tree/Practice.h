@@ -11,8 +11,11 @@
 
 #include <stdio.h>
 #include "CustomStruct.h"
+#include "Tree.h"
 
 #endif /* Practice_h */
+
+void testPath(void);
 
 BTNode *createBTree(char pre[],char in[], int preLeft, int preRight, int inLeft, int inRight);
 BTNode *createBTTreePost(char post[], char in[], int postLeft, int postRight, int inLeft, int inRight);
@@ -27,4 +30,6 @@ void printLeafNodeLink(void);
 void updateParentTree(BTParentNode *cur, BTParentNode *par);
 void printParentNodePath(BTParentNode *node);
 void printParentAllPath(BTParentNode *root);
+
+void changePreToPost(char pre[],char post[],int preLeft,int preRight,int postLeft,int postRight);
 
