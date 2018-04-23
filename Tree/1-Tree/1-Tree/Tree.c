@@ -84,6 +84,10 @@ void testThreadMethod() {
     if (last != NULL) {
         printf("inorder last node value:%c\n",last->data);
     }
+    TBTNode *priorNode = InOrderPriorNode(&root);
+    if (priorNode != NULL) {
+        printf("inorder prior node value:%c\n",priorNode->data);
+    }
     threadInOrder(&root);
 
 //    createPreThread(&root);
@@ -318,6 +322,19 @@ TBTNode *InOrderLastNode(TBTNode *p) {
     }
     return p;
 }
+
+TBTNode *InOrderPriorNode(TBTNode *p) {
+    if (p != NULL) {
+        if (p->leftTag == 1) {
+            return p->leftChild;
+        } else {
+            return InOrderLastNode(p->leftChild); // 如果leftTag为0，则前驱为左子树的最后一个节点
+        }
+    } else {
+        return NULL;
+    }
+}
+
 
 TBTNode *Next(TBTNode *p) {
     if (p->rightTag == 0) {
