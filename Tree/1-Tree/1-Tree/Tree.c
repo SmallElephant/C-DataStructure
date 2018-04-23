@@ -88,6 +88,10 @@ void testThreadMethod() {
     if (priorNode != NULL) {
         printf("inorder prior node value:%c\n",priorNode->data);
     }
+    TBTNode *preNext = InOrderPreNext(&dNode);
+    if (preNext != NULL) {
+        printf("inorder node in preorder next value:%c\n",preNext->data);
+    }
     threadInOrder(&root);
 
 //    createPreThread(&root);
@@ -333,6 +337,24 @@ TBTNode *InOrderPriorNode(TBTNode *p) {
     } else {
         return NULL;
     }
+}
+
+TBTNode *InOrderPreNext(TBTNode *t) { // 结点p在中序线索二叉树查找前序下的后继
+    TBTNode *p = t;
+    if (!p->leftTag) {
+        p = p->leftChild;
+    } else if(!p->rightTag) {
+        p = p->rightChild;
+    } else {
+        p = t;
+        while (p && p->rightTag) {
+            p = p->rightChild;
+        }
+        if (p) {
+            p = p->rightChild;
+        }
+    }
+    return p;
 }
 
 

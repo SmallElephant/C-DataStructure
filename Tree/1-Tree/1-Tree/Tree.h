@@ -38,6 +38,7 @@ TBTNode *First(TBTNode *p);
 TBTNode *Next(TBTNode *p);
 TBTNode *InOrderLastNode(TBTNode *p);
 TBTNode *InOrderPriorNode(TBTNode *p);
+TBTNode *InOrderPreNext(TBTNode *t);
 void threadInOrder(TBTNode *root);
 
 void createPreThread(TBTNode *root);
