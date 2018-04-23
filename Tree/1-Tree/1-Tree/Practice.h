@@ -41,3 +41,7 @@ int levelNode2(BTNode *p, char x, int level);
 
 void doubleOrder(BTNode *root);
 
+void testAllPath(void);
+void printAllPath(BTNode *p); // 打印所有根节点到叶子节点的路径
+
+

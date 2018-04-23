@@ -246,4 +246,39 @@ void doubleOrder(BTNode *root) {
     }
 }
 
+void testAllPath() {
+    //      A
+    //  B        C
+    //D        E   F
+    BTNode root = {'A',NULL,NULL};
+    BTNode bNode = {'B',NULL,NULL};
+    BTNode cNode = {'C',NULL,NULL};
+    BTNode dNode = {'D',NULL,NULL};
+    BTNode eNode = {'E',NULL,NULL};
+    BTNode fNode = {'F',NULL,NULL};
+    root.leftNode = &bNode;
+    root.rightNode = &cNode;
+    bNode.leftNode = &dNode;
+    cNode.leftNode = &eNode;
+    cNode.rightNode = &fNode;
+    printAllPath(&root);
+}
+
+int top = 0;
+char pathStack[100];
+void printAllPath(BTNode *p) {
+    if (p != NULL) {
+        pathStack[top++] = p->data;
+        if (p->leftNode == NULL && p->rightNode == NULL) {
+            for (int i = 0; i < top; i++) {
+                printf("%c->",pathStack[i]);
+            }
+            printf("\n");
+        }
+        printAllPath(p->leftNode);
+        printAllPath(p->rightNode);
+        top--;
+    }
+}
+
 

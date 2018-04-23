@@ -9,6 +9,9 @@
 #include "Tree.h"
 
 void testTreeMethod() {
+    //      A
+    //  B        C
+    //D        E   F
     BTNode root = {'A',NULL,NULL};
     BTNode bNode = {'B',NULL,NULL};
     BTNode cNode = {'C',NULL,NULL};
@@ -38,6 +41,7 @@ void testTreeMethod() {
     if (searchRes != NULL) {
         printf("exist node value:%c\n",searchRes->data);
     }
+    
 }
 
 void testBinaryNonRecursive() {

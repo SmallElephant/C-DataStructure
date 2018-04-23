@@ -13,8 +13,8 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    testTreeMethod();
-    testThreadMethod();
+//    testThreadMethod();
 //    testPath();
-
+    testAllPath();
     return 0;
 }
