@@ -41,5 +41,8 @@ int main(int argc, const char * argv[]) {
         printf("%c\t",post[i]);
     }
     printf("\n");
+    levelNode(&root, 'D');
+    int level = levelNode2(&root, 'D', 1);
+    printf("D level is %d\n",level);
     return 0;
 }

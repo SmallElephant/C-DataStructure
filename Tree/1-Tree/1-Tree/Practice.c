@@ -169,4 +169,36 @@ void changePreToPost(char pre[],char post[],int preLeft,int preRight,int postLef
     }
 }
 
+int nodeLevel = 1;
+
+void levelNode(BTNode *p, char x) {
+    if (p != NULL) {
+        if (p->data == x) {
+            printf("%c level is %d\n",x,nodeLevel);
+        }
+        nodeLevel++;
+        levelNode(p->leftNode, x);
+        levelNode(p->rightNode, x);
+        nodeLevel--;
+    }
+}
+
+int levelNode2(BTNode *p, char x, int level) {
+    if (p == NULL) {
+        return 0;
+    }
+    if (p->data == x) {
+        return level;
+    }
+    int left = levelNode2(p->leftNode, x, level + 1);
+    if (left > 0) {
+        return left;
+    }
+    int right = levelNode2(p->rightNode, x, level + 1);
+    if (right > 0) {
+        return right;
+    }
+    return -1;
+}
+
 

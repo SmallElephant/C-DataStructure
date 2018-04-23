@@ -33,3 +33,7 @@ void printParentAllPath(BTParentNode *root);
 
 void changePreToPost(char pre[],char post[],int preLeft,int preRight,int postLeft,int postRight);
 
+void levelNode(BTNode *p, char x);
+
+int levelNode2(BTNode *p, char x, int level);
+
