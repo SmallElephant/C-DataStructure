@@ -27,8 +27,8 @@ typedef struct VNode {
 } VNode;
 
 typedef struct AGraph {
-    int n; // 整个图的节点总数和边数
-    int e;
+    int n; // 整个图的节点总数
+    int e; // 边数
     VNode adjlist[MaxSize]; // 顶点数组
 } AGraph;
 

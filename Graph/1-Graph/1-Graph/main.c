@@ -54,6 +54,34 @@ void BFS(AGraph *graph,int v,int visit[MaxSize]) {
     }
 }
 
+int maxDist(AGraph *graph, int v) {
+    int que[MaxSize];
+    int front = 0;
+    int rear = 0;
+    que[rear] = v;
+    rear = (rear + 1) % MaxSize;
+    for (int i = 0; i < graph->n; i++) {
+        visit[i] = 0;
+    }
+    ArcNode *p;
+    int j = 0;
+    while (front != rear) {
+        j = que[front];
+        front = (front + 1) % MaxSize;
+        p = graph->adjlist[j].firstarc;
+        while (p != NULL) {
+            int i = p->adjvex;
+            if (visit[i] == 0) {
+                visit[i] = 1;
+                que[rear] = p->adjvex;
+                rear = (rear + 1) % MaxSize;
+            }
+            p = p->nextarc;
+        }
+    }
+    return j;
+}
+
 void insertNextArcNode(VNode *vNode, ArcNode *data) {
     ArcNode *p = vNode->firstarc;
     while (p->nextarc != NULL) {
@@ -107,5 +135,7 @@ int main(int argc, const char * argv[]) {
     int bfs[MaxSize] = {0};
     BFS(&graph, 0, bfs);
     printf("\n");
+    int distance = maxDist(&graph, 0);
+    printf("max far distance:%d\n",distance);
     return 0;
 }
