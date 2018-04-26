@@ -90,32 +90,35 @@ void insertNextArcNode(VNode *vNode, ArcNode *data) {
     p->nextarc = data;
 }
 
-int main(int argc, const char * argv[]) {
+void DFSTest() {
     // insert code here...
-//    printf("Hello, World!\n");
+    //    printf("Hello, World!\n");
     // A B C D E
     // 0 1 2 3 4
     // A B  C D
     // C D
     // D E
+    
+    VNode aNode = {'0',NULL};
+    VNode bNode = {'1',NULL};
+    VNode cNode = {'2',NULL};
+    VNode dNode = {'3',NULL};
+    VNode eNode = {'4',NULL};
+    ArcNode arc1 = {1,NULL,0};
+    ArcNode arc2 = {2,NULL,0};
+    ArcNode arc3 = {3,NULL,0};
+    ArcNode arc4 = {4,NULL,0};
+    aNode.firstarc = &arc1;
+    cNode.firstarc = &arc3;
+    dNode.firstarc = &arc4;
+    insertNextArcNode(&aNode, &arc2);
+    insertNextArcNode(&aNode, &arc3);
+    AGraph graph = {5,5,{aNode,bNode,cNode,dNode,eNode}};
+    DFS(&graph, 0);
+    printf("\n");
+}
 
-//    VNode aNode = {'0',NULL};
-//    VNode bNode = {'1',NULL};
-//    VNode cNode = {'2',NULL};
-//    VNode dNode = {'3',NULL};
-//    VNode eNode = {'4',NULL};
-//    ArcNode arc1 = {1,NULL,0};
-//    ArcNode arc2 = {2,NULL,0};
-//    ArcNode arc3 = {3,NULL,0};
-//    ArcNode arc4 = {4,NULL,0};
-//    aNode.firstarc = &arc1;
-//    cNode.firstarc = &arc3;
-//    dNode.firstarc = &arc4;
-//    insertNextArcNode(&aNode, &arc2);
-//    insertNextArcNode(&aNode, &arc3);
-//    AGraph graph = {5,5,{aNode,bNode,cNode,dNode,eNode}};
-//    DFS(&graph, 0);
-//    printf("\n");
+void dfsTest() {
     // A B D
     // B C E
     VNode aNode = {'0',NULL};
@@ -137,5 +140,66 @@ int main(int argc, const char * argv[]) {
     printf("\n");
     int distance = maxDist(&graph, 0);
     printf("max far distance:%d\n",distance);
+}
+
+void DFS2(AGraph *graph,int v,int *vn,int *en) {
+    ArcNode *p = graph->adjlist[v].firstarc;
+    visit[v] = 1;
+    (*vn)++; // 顶点加1
+    while (p != NULL) {
+        (*en)++; // 边数加1
+        int i = p->adjvex;
+        if (visit[i] == 0) {
+            DFS2(graph, i, vn, en);
+        }
+        p = p->nextarc;
+    }
+}
+
+int GisTree(AGraph *graph) {
+    int vn = 0;
+    int en = 0;
+    int i;
+    for (i = 0; i < graph->n; i++) {
+        visit[i] = 0;
+    }
+    DFS2(graph, 0, &vn, &en);
+    if (vn == graph->n && graph->n - 1 == en / 2) { // 访问过程中的顶点数与图中的顶点数相等，且边数等于顶点数减1
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void validTree() {
+    //A
+    //B C D
+    //D
+    //A
+    // A 0 B 1 C 2 D 3
+    // 顶点 vertex  边 edge
+    VNode aNode = {'0',NULL};
+    VNode bNode = {'1',NULL};
+    VNode cNode = {'2',NULL};
+    VNode dNode = {'3',NULL};
+    ArcNode arc1 = {1,NULL,0};
+    ArcNode arc2 = {2,NULL,0};
+    ArcNode arc3 = {3,NULL,0};
+    aNode.firstarc = &arc1;
+    insertNextArcNode(&aNode, &arc2);
+    insertNextArcNode(&aNode, &arc3);
+    bNode.firstarc = &arc3;
+    dNode.firstarc = &arc1;
+    AGraph graph = {4,5,{aNode,bNode,cNode,dNode}};
+    int res = GisTree(&graph);
+    if (res) {
+        printf("graph is a tree\n");
+    } else {
+        printf("graph is not a valid tree\n");
+    }
+}
+
+int main(int argc, const char * argv[]) {
+    validTree();
     return 0;
 }
