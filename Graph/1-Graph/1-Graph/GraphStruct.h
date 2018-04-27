@@ -32,4 +32,16 @@ typedef struct AGraph {
     VNode adjlist[MaxSize]; // 顶点数组
 } AGraph;
 
+typedef struct VertexType {
+    int no;
+    char info;
+} VertexType;
+
+typedef struct MGraph {
+    int n; // 顶点数
+    int e; // 边数
+    VertexType vertex[MaxSize]; // 存储每个顶点的值
+    int edges[MaxSize][MaxSize]; // 存储顶点与顶点之间的关系
+} MGraph;
+
 #endif /* GraphStruct_h */

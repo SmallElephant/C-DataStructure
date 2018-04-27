@@ -170,7 +170,7 @@ int GisTree(AGraph *graph) {
         return 0;
     }
 }
-
+// 判断图是否是一棵树，如果是返回1，如果不是返回0
 void validTree() {
     //A
     //B C D
@@ -199,7 +199,101 @@ void validTree() {
     }
 }
 
+// 图采用邻接表存储，设计一个算法，判断顶点i与顶点j之间是否存在路径
+
+int DFSTravse(AGraph *graph,int i,int j) {
+    int k;
+    for (k = 0; k < graph->n; k++) {
+        visit[k] = 0;
+    }
+    DFS(graph, i);
+    if (visit[j] == 1) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+void isDFSTravse() {
+    //A
+    //B C D
+    //D
+    //A
+    // A 0 B 1 C 2 D 3
+    // 顶点 vertex  边 edge
+    VNode aNode = {'0',NULL};
+    VNode bNode = {'1',NULL};
+    VNode cNode = {'2',NULL};
+    VNode dNode = {'3',NULL};
+    ArcNode arc1 = {1,NULL,0};
+    ArcNode arc2 = {2,NULL,0};
+    ArcNode arc3 = {3,NULL,0};
+    aNode.firstarc = &arc1;
+    insertNextArcNode(&aNode, &arc2);
+    insertNextArcNode(&aNode, &arc3);
+    bNode.firstarc = &arc3;
+    dNode.firstarc = &arc1;
+    AGraph graph = {4,5,{aNode,bNode,cNode,dNode}};
+    int res = DFSTravse(&graph, 0, 3);
+    if (res) {
+        printf("A and D is exist path\n");
+    } else {
+        printf("A and D is not exist path\n");
+    }
+}
+#define INF 10000
+void prime(MGraph *graph, int v) { // U 已选定最小值集合 V-U待选定集合
+    // i表示V-U中结点 cloest[i] 表示距离U集合中路径最短的结点编号 lowcost[i] 表示V-U中距离U集合中距离最短的节点的权重
+    // lowcost[i] = 0 表示已经加入U中
+    
+    // 1 初始化U
+    int vertexs = graph->n;
+    int visit[vertexs]; // 是否被访问
+    int lowcost[vertexs];
+    for (int i = 0; i < vertexs; i++) {
+        visit[i] = 0; // 所有结点默认未加入
+        lowcost[i] = graph->edges[v][i]; // 其他结点到结点v的最短路径
+    }
+    visit[v] = 1; // 结点v被访问，即加入选定集合
+    // 2.遍历其他的n-1个结点
+    int min;
+    int k = 0;
+    for (int i = 0; i < vertexs - 1; i++) {
+        min = INF;
+        for (int j = 0; j < vertexs; j++) { // 在V-U中找出距离U中最近的结点
+            if (visit[j] == 0 && lowcost[j] < min) { //  未被访问
+                min = lowcost[j];
+                k = j;
+            }
+        }
+        visit[k] = 1; // k加入U中,k被访问过
+        printf("FlyElephant:%d加入节点的权重为:%d\n",k,min);
+//        假设第一次：lowcost[2]代表与1相连的点的权值，现在加入了k点。则比较k点与2点的边edges[k][2]和lowcost[2]的大小，若lowcost[2]大，则lowcost[2] = edges[k][2]。（关键步骤：实质就是每在最小生成树集合中加入一个点就需要把这个点与集合外的点比较，不断的寻找两个集合之间最小的边）
+        for (int j = 0; j < vertexs; j++) {
+            if (visit[j] == 0 && graph->edges[k][j] < lowcost[j]) {
+                lowcost[j] = graph->edges[k][j];
+            }
+        }
+    }
+}
+
+void primeTest() { // 最小代价树
+    //      0
+    //1     2   3
+    //      4
+    VertexType aVertex = {0,'A'};
+    VertexType bVertex = {1,'B'};
+    VertexType cVertex = {2,'B'};
+    VertexType dVertex = {3,'B'};
+    VertexType eVertex = {4,'B'};
+    int test = INF;
+    MGraph graph = {5,8,{aVertex,bVertex,cVertex,dVertex,eVertex},{{test,5,1,2,test},{5,test,3,test,4},{1,3,test,6,2},{2,test,6,test,3},{0,4,2,3,0}}};
+    prime(&graph, 0);
+}
+
 int main(int argc, const char * argv[]) {
     validTree();
+    isDFSTravse();
+    primeTest();
     return 0;
 }
