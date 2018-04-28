@@ -44,4 +44,10 @@ typedef struct MGraph {
     int edges[MaxSize][MaxSize]; // 存储顶点与顶点之间的关系
 } MGraph;
 
+typedef struct MEdge {
+    int a;
+    int b;
+    int w;
+} MEdge;
+
 #endif /* GraphStruct_h */
