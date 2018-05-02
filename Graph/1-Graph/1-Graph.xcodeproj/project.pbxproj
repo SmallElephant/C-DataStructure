@@ -10,6 +10,7 @@
 		A84C91DB208F5E240064FD46 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A84C91DA208F5E240064FD46 /* main.c */; };
 		A84C91E3208F5E480064FD46 /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = A84C91E1208F5E480064FD46 /* Graph.c */; };
 		A84C91E6208F5E630064FD46 /* GraphStruct.c in Sources */ = {isa = PBXBuildFile; fileRef = A84C91E4208F5E630064FD46 /* GraphStruct.c */; };
+		A8FA0D952099636700C8D194 /* Dijkstra.c in Sources */ = {isa = PBXBuildFile; fileRef = A8FA0D932099636700C8D194 /* Dijkstra.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		A84C91E2208F5E480064FD46 /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		A84C91E4208F5E630064FD46 /* GraphStruct.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GraphStruct.c; sourceTree = "<group>"; };
 		A84C91E5208F5E630064FD46 /* GraphStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphStruct.h; sourceTree = "<group>"; };
+		A8FA0D932099636700C8D194 /* Dijkstra.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Dijkstra.c; sourceTree = "<group>"; };
+		A8FA0D942099636700C8D194 /* Dijkstra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dijkstra.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				A84C91E2208F5E480064FD46 /* Graph.h */,
 				A84C91E4208F5E630064FD46 /* GraphStruct.c */,
 				A84C91E5208F5E630064FD46 /* GraphStruct.h */,
+				A8FA0D932099636700C8D194 /* Dijkstra.c */,
+				A8FA0D942099636700C8D194 /* Dijkstra.h */,
 			);
 			path = "1-Graph";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				A84C91E6208F5E630064FD46 /* GraphStruct.c in Sources */,
 				A84C91E3208F5E480064FD46 /* Graph.c in Sources */,
 				A84C91DB208F5E240064FD46 /* main.c in Sources */,
+				A8FA0D952099636700C8D194 /* Dijkstra.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

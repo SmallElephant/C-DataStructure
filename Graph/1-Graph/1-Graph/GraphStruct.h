@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 
-#define MaxSize 5
+#define MaxSize 10
 
 //邻接表（Adjacency List）
 

@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "Graph.h"
+#include "Dijkstra.h"
 
 #define MaxSize 5
 
@@ -247,5 +248,6 @@ int main(int argc, const char * argv[]) {
     isDFSTravse();
     primeTest();
     kruskalTest();
+    testDijkstra();
     return 0;
 }
