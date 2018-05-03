@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include "Graph.h"
 #include "Dijkstra.h"
+#include "Floyd.h"
+#include "Topology.h"
 
 #define MaxSize 5
 
@@ -249,5 +251,7 @@ int main(int argc, const char * argv[]) {
     primeTest();
     kruskalTest();
     testDijkstra();
+    testFloyd();
+    testTopology();
     return 0;
 }

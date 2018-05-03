@@ -24,6 +24,7 @@ typedef struct ArcNode {
 typedef struct VNode {
     char data; // 顶点的定义
     ArcNode *firstarc; //顶点的指针
+    int count; // 入度，拓扑排序
 } VNode;
 
 typedef struct AGraph {
