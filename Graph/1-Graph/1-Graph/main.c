@@ -11,6 +11,7 @@
 #include "Dijkstra.h"
 #include "Floyd.h"
 #include "Topology.h"
+#include "Practice.h"
 
 #define MaxSize 5
 
@@ -246,6 +247,7 @@ void isDFSTravse() {
 }
 
 int main(int argc, const char * argv[]) {
+    dfsTest();
     validTree();
     isDFSTravse();
     primeTest();
@@ -253,5 +255,7 @@ int main(int argc, const char * argv[]) {
     testDijkstra();
     testFloyd();
     testTopology();
+    testBFSPath();
+    testDFSRootPath();
     return 0;
 }

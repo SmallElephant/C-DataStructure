@@ -11,6 +11,7 @@
 		A84C91DB208F5E240064FD46 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A84C91DA208F5E240064FD46 /* main.c */; };
 		A84C91E3208F5E480064FD46 /* Graph.c in Sources */ = {isa = PBXBuildFile; fileRef = A84C91E1208F5E480064FD46 /* Graph.c */; };
 		A84C91E6208F5E630064FD46 /* GraphStruct.c in Sources */ = {isa = PBXBuildFile; fileRef = A84C91E4208F5E630064FD46 /* GraphStruct.c */; };
+		A854286B209C392200F64C5C /* Practice.c in Sources */ = {isa = PBXBuildFile; fileRef = A8542869209C392200F64C5C /* Practice.c */; };
 		A8FA0D952099636700C8D194 /* Dijkstra.c in Sources */ = {isa = PBXBuildFile; fileRef = A8FA0D932099636700C8D194 /* Dijkstra.c */; };
 		A8FA0D982099A8DF00C8D194 /* Floyd.c in Sources */ = {isa = PBXBuildFile; fileRef = A8FA0D962099A8DF00C8D194 /* Floyd.c */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,8 @@
 		A84C91E2208F5E480064FD46 /* Graph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		A84C91E4208F5E630064FD46 /* GraphStruct.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GraphStruct.c; sourceTree = "<group>"; };
 		A84C91E5208F5E630064FD46 /* GraphStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphStruct.h; sourceTree = "<group>"; };
+		A8542869209C392200F64C5C /* Practice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Practice.c; sourceTree = "<group>"; };
+		A854286A209C392200F64C5C /* Practice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Practice.h; sourceTree = "<group>"; };
 		A8FA0D932099636700C8D194 /* Dijkstra.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Dijkstra.c; sourceTree = "<group>"; };
 		A8FA0D942099636700C8D194 /* Dijkstra.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dijkstra.h; sourceTree = "<group>"; };
 		A8FA0D962099A8DF00C8D194 /* Floyd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Floyd.c; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				A8FA0D972099A8DF00C8D194 /* Floyd.h */,
 				A82D0F47209AEB9800BA408E /* Topology.c */,
 				A82D0F48209AEB9800BA408E /* Topology.h */,
+				A8542869209C392200F64C5C /* Practice.c */,
+				A854286A209C392200F64C5C /* Practice.h */,
 			);
 			path = "1-Graph";
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				A84C91E3208F5E480064FD46 /* Graph.c in Sources */,
 				A84C91DB208F5E240064FD46 /* main.c in Sources */,
 				A8FA0D952099636700C8D194 /* Dijkstra.c in Sources */,
+				A854286B209C392200F64C5C /* Practice.c in Sources */,
 				A82D0F49209AEB9800BA408E /* Topology.c in Sources */,
 				A8FA0D982099A8DF00C8D194 /* Floyd.c in Sources */,
 			);
