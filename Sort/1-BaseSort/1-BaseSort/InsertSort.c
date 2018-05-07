@@ -11,7 +11,7 @@
 void insertSort(int a[],int n) {
     for (int i = 1; i < n; i++) {
         int j;
-        int cur = a[i];
+        int cur = a[i]; // 选择这种方式，比较容易理解
         for (j = i - 1; j >= 0 && cur < a[j]; j--) {
             a[j+1] = a[j];
         }
@@ -34,8 +34,14 @@ void shellSort(int a[],int n) {
     int gap = n / 2;
     while (gap > 0) {
         for (int i = gap; i < n; i++) {
-            
+            int j;
+            int cur = a[i];
+            for (j = i - gap; j >= 0 && cur < a[j]; j -= gap) {
+                a[j+gap] = a[j];
+            }
+            a[j+gap] = cur;
         }
+        gap = gap / 2;
     }
 }
 

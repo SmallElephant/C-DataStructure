@@ -21,5 +21,8 @@ int main(int argc, const char * argv[]) {
     int a[] = {10,9,8,7,6,5,4,3,2,1};
     insertSort(a, 10);
     printData(a, 10);
+    int sa[] = {10,9,8,7,6,5,4,3,2,1};
+    shellSort(sa, 10);
+    printData(sa, 10);
     return 0;
 }
