@@ -14,3 +14,5 @@
 #endif /* SwapSort_h */
 
 void bubbleSort(int a[],int n);
+
+void quickSort(int a[],int low,int high);
