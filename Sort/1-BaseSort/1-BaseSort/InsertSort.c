@@ -8,15 +8,34 @@
 
 #include "InsertSort.h"
 
-
 void insertSort(int a[],int n) {
     for (int i = 1; i < n; i++) {
-        int cur = a[i]; // current value
-        int j = i - 1;
-        while (cur < a[j] && j >= 0) {
+        int j;
+        int cur = a[i];
+        for (j = i - 1; j >= 0 && cur < a[j]; j--) {
             a[j+1] = a[j];
-            j--;
         }
         a[j+1] = cur;
     }
 }
+
+void insertSort1(int a[],int n) {
+    for (int i = 1; i < n; i++) {
+        int j;
+        int cur = a[i];
+        for (j = i; j > 0 && cur < a[j-1]; j--) {
+            a[j] = a[j-1];
+        }
+        a[j] = cur;
+    }
+}
+
+void shellSort(int a[],int n) {
+    int gap = n / 2;
+    while (gap > 0) {
+        for (int i = gap; i < n; i++) {
+            
+        }
+    }
+}
+

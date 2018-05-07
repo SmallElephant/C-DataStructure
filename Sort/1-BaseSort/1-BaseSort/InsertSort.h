@@ -13,4 +13,8 @@
 
 #endif /* InsertSort_h */
 
+// 直接插入排序
 void insertSort(int a[],int n);
+
+// 希尔排序
+void shellSort(int a[],int n);
