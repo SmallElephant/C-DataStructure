@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "InsertSort.h"
+#include "SwapSort.h"
 
 void printData(int a[],int n) {
     for (int i = 0; i < n; i++) {
@@ -24,5 +25,8 @@ int main(int argc, const char * argv[]) {
     int sa[] = {10,9,8,7,6,5,4,3,2,1};
     shellSort(sa, 10);
     printData(sa, 10);
+    int ba[] = {10,9,8,7,6,5,4,3,2,1};
+    bubbleSort(ba, 10);
+    printData(ba, 10);
     return 0;
 }

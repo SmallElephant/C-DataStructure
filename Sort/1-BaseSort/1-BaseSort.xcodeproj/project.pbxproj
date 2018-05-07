@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A8DE03C220A03B8F007EA13A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03C120A03B8F007EA13A /* main.c */; };
 		A8DE03CA20A03BA4007EA13A /* InsertSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03C820A03BA4007EA13A /* InsertSort.c */; };
+		A8DE03CD20A05EA2007EA13A /* SwapSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03CB20A05EA2007EA13A /* SwapSort.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		A8DE03C120A03B8F007EA13A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A8DE03C820A03BA4007EA13A /* InsertSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = InsertSort.c; sourceTree = "<group>"; };
 		A8DE03C920A03BA4007EA13A /* InsertSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsertSort.h; sourceTree = "<group>"; };
+		A8DE03CB20A05EA2007EA13A /* SwapSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SwapSort.c; sourceTree = "<group>"; };
+		A8DE03CC20A05EA2007EA13A /* SwapSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwapSort.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				A8DE03C120A03B8F007EA13A /* main.c */,
 				A8DE03C820A03BA4007EA13A /* InsertSort.c */,
 				A8DE03C920A03BA4007EA13A /* InsertSort.h */,
+				A8DE03CB20A05EA2007EA13A /* SwapSort.c */,
+				A8DE03CC20A05EA2007EA13A /* SwapSort.h */,
 			);
 			path = "1-BaseSort";
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DE03CD20A05EA2007EA13A /* SwapSort.c in Sources */,
 				A8DE03CA20A03BA4007EA13A /* InsertSort.c in Sources */,
 				A8DE03C220A03B8F007EA13A /* main.c in Sources */,
 			);
