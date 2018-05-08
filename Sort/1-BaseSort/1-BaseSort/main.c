@@ -11,6 +11,7 @@
 #include "InsertSort.h"
 #include "SwapSort.h"
 #include "SelectSort.h"
+#include "MergeSort.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -34,5 +35,9 @@ int main(int argc, const char * argv[]) {
     printf("select sort result:\n");
     selectSort(select, 10);
     printData(select, 10);
+    int ma[] = {10,9,8,7,6,5,4,3,2,1};
+    printf("merge sort result:\n");
+    mergeSort(ma, 0, 9);
+    printData(ma, 10);
     return 0;
 }

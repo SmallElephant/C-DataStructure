@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A8B19F7320A18DF300D4099F /* SelectSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8B19F7120A18DF300D4099F /* SelectSort.c */; };
 		A8B19F7620A18E8F00D4099F /* Util.c in Sources */ = {isa = PBXBuildFile; fileRef = A8B19F7420A18E8F00D4099F /* Util.c */; };
+		A8B19F7920A1BB1100D4099F /* MergeSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8B19F7720A1BB1100D4099F /* MergeSort.c */; };
 		A8DE03C220A03B8F007EA13A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03C120A03B8F007EA13A /* main.c */; };
 		A8DE03CA20A03BA4007EA13A /* InsertSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03C820A03BA4007EA13A /* InsertSort.c */; };
 		A8DE03CD20A05EA2007EA13A /* SwapSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03CB20A05EA2007EA13A /* SwapSort.c */; };
@@ -31,6 +32,8 @@
 		A8B19F7220A18DF300D4099F /* SelectSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectSort.h; sourceTree = "<group>"; };
 		A8B19F7420A18E8F00D4099F /* Util.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Util.c; sourceTree = "<group>"; };
 		A8B19F7520A18E8F00D4099F /* Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		A8B19F7720A1BB1100D4099F /* MergeSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MergeSort.c; sourceTree = "<group>"; };
+		A8B19F7820A1BB1100D4099F /* MergeSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MergeSort.h; sourceTree = "<group>"; };
 		A8DE03BE20A03B8F007EA13A /* 1-BaseSort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "1-BaseSort"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8DE03C120A03B8F007EA13A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A8DE03C820A03BA4007EA13A /* InsertSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = InsertSort.c; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				A8B19F7220A18DF300D4099F /* SelectSort.h */,
 				A8B19F7420A18E8F00D4099F /* Util.c */,
 				A8B19F7520A18E8F00D4099F /* Util.h */,
+				A8B19F7720A1BB1100D4099F /* MergeSort.c */,
+				A8B19F7820A1BB1100D4099F /* MergeSort.h */,
 			);
 			path = "1-BaseSort";
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B19F7920A1BB1100D4099F /* MergeSort.c in Sources */,
 				A8B19F7620A18E8F00D4099F /* Util.c in Sources */,
 				A8DE03CD20A05EA2007EA13A /* SwapSort.c in Sources */,
 				A8B19F7320A18DF300D4099F /* SelectSort.c in Sources */,
