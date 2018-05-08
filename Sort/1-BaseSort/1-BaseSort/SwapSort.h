@@ -10,6 +10,7 @@
 #define SwapSort_h
 
 #include <stdio.h>
+#include "Util.h"
 
 #endif /* SwapSort_h */
 

@@ -7,15 +7,10 @@
 //
 
 #include <stdio.h>
+#include "Util.h"
 #include "InsertSort.h"
 #include "SwapSort.h"
-
-void printData(int a[],int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d\t",a[i]);
-    }
-    printf("\n");
-}
+#include "SelectSort.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -35,5 +30,9 @@ int main(int argc, const char * argv[]) {
     printf("quick sort result:\n");
     quickSort(qa, 0, 9);
     printData(qa, 10);
+    int select[] = {10,9,8,7,6,5,4,3,2,1};
+    printf("select sort result:\n");
+    selectSort(select, 10);
+    printData(select, 10);
     return 0;
 }
