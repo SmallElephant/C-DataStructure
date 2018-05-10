@@ -13,6 +13,7 @@
 		A8DE03C220A03B8F007EA13A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03C120A03B8F007EA13A /* main.c */; };
 		A8DE03CA20A03BA4007EA13A /* InsertSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03C820A03BA4007EA13A /* InsertSort.c */; };
 		A8DE03CD20A05EA2007EA13A /* SwapSort.c in Sources */ = {isa = PBXBuildFile; fileRef = A8DE03CB20A05EA2007EA13A /* SwapSort.c */; };
+		DADC332320A4972A00F295F1 /* Practice.c in Sources */ = {isa = PBXBuildFile; fileRef = DADC332220A4972A00F295F1 /* Practice.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		A8DE03C920A03BA4007EA13A /* InsertSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsertSort.h; sourceTree = "<group>"; };
 		A8DE03CB20A05EA2007EA13A /* SwapSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SwapSort.c; sourceTree = "<group>"; };
 		A8DE03CC20A05EA2007EA13A /* SwapSort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwapSort.h; sourceTree = "<group>"; };
+		DADC332120A4972A00F295F1 /* Practice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Practice.h; sourceTree = "<group>"; };
+		DADC332220A4972A00F295F1 /* Practice.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Practice.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 				A8B19F7520A18E8F00D4099F /* Util.h */,
 				A8B19F7720A1BB1100D4099F /* MergeSort.c */,
 				A8B19F7820A1BB1100D4099F /* MergeSort.h */,
+				DADC332120A4972A00F295F1 /* Practice.h */,
+				DADC332220A4972A00F295F1 /* Practice.c */,
 			);
 			path = "1-BaseSort";
 			sourceTree = "<group>";
@@ -114,7 +119,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = rrd;
+				ORGANIZATIONNAME = FlyElephant;
 				TargetAttributes = {
 					A8DE03BD20A03B8F007EA13A = {
 						CreatedOnToolsVersion = 9.0;
@@ -148,6 +153,7 @@
 				A8B19F7620A18E8F00D4099F /* Util.c in Sources */,
 				A8DE03CD20A05EA2007EA13A /* SwapSort.c in Sources */,
 				A8B19F7320A18DF300D4099F /* SelectSort.c in Sources */,
+				DADC332320A4972A00F295F1 /* Practice.c in Sources */,
 				A8DE03CA20A03BA4007EA13A /* InsertSort.c in Sources */,
 				A8DE03C220A03B8F007EA13A /* main.c in Sources */,
 			);

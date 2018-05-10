@@ -3,7 +3,7 @@
 //  1-BaseSort
 //
 //  Created by FlyElephant on 2018/5/7.
-//  Copyright © 2018年 rrd. All rights reserved.
+//  Copyright © 2018年 FlyElephant. All rights reserved.
 //
 
 #include <stdio.h>
@@ -12,6 +12,7 @@
 #include "SwapSort.h"
 #include "SelectSort.h"
 #include "MergeSort.h"
+#include "Practice.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -39,5 +40,9 @@ int main(int argc, const char * argv[]) {
     printf("merge sort result:\n");
     mergeSort(ma, 0, 9);
     printData(ma, 10);
+    int ra[] = {-1,9,8,-7,6,5,-4,3,2,-1};
+    printf("re sort result:\n");
+    resort(ra, 10);
+    printData(ra, 10);
     return 0;
 }
