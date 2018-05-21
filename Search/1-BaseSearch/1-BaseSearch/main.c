@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "BaseSearch.h"
+#include "BinarySearchTree.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -18,5 +19,6 @@ int main(int argc, const char * argv[]) {
     } else {
         printf("number is not found\n");
     }
+    testBSTOperation();
     return 0;
 }
