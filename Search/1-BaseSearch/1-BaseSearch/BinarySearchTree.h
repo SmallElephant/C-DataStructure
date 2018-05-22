@@ -26,4 +26,5 @@ void createBST(int key[],int n);
 
 BTNode *insert(BTNode *bt,int key); // 1 success 0 fail
 
+int isBinarySearchTree(BTNode *node);
 

@@ -19,6 +19,12 @@ void testBSTOperation() {
         node = node->lchild;
     }
     printf("print value\n");
+    int res = isBinarySearchTree(node);
+    if (res) {
+        printf("node is binary tree\n");
+    } else {
+        printf("node is not binary tree\n");
+    }
 }
 
 BTNode *BSTSearch(BTNode *bt,int key) {
@@ -61,6 +67,22 @@ BTNode *insert(BTNode *bt,int key) {
             bt->rchild = insert(bt->rchild, key);
         }
         return bt; // unchanged
+    }
+}
+
+int preData = -1000;
+
+int isBinarySearchTree(BTNode *node) {
+    if (node == NULL) {
+        return 1;
+    } else {
+        int b1 = isBinarySearchTree(node->lchild);
+        if (b1 == 0 || preData < node->key) { // left tree is false,root value smaller than current left tree value
+            return 0;
+        }
+        preData = node->key;
+        int b2 = isBinarySearchTree(node->rchild);
+        return b2;
     }
 }
 
