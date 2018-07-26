@@ -47,4 +47,20 @@ void deleteSpecialNumber(SqlList *list,int num) {
     list->length = k;
 }
 
+void deleteRangeNumber(SqlList *list,int s,int t) {
+    if (s >= t) {
+        return;
+    }
+    int len = list->length;
+    int i;
+    for (i = 0; i < len && list->data[i] < s; i++) {}
+    int j;
+    for (j = i; j < len && list->data[j] <= t; j++) {
+    }
+    for (; j < len; j++,i++) {
+        list->data[i] = list->data[j];
+    }
+    list->length = i;
+}
+
 

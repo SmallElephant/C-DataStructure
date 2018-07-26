@@ -40,14 +40,17 @@ int main(int argc, const char * argv[]) {
 //    deleteMinNumber(&data, 5);
 //    printData(data.data, data.length);
     // 3.反转链表中的数字
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    reverseList(arr, 10);
-    printData(arr, 10);
-    
-    SqlList list= {{1,2,3,4,5,6,4,4,4,10},10};
-    deleteSpecialNumber(&list, 4);
+//    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+//    reverseList(arr, 10);
+//    printData(arr, 10);
+//    4.删除指定元素
+//    SqlList list= {{1,2,3,4,5,6,4,4,4,10},10};
+//    deleteSpecialNumber(&list, 4);
+//    printData(list.data, list.length);
+    // 5.有序表删除一定范围内的元素
+    SqlList list= {{1,2,3,4,5,6,7,8,9,10},10};
+    deleteRangeNumber(&list, 4, 7);
     printData(list.data, list.length);
-    
     return 0;
 }
 

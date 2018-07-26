@@ -28,6 +28,8 @@ void reverseList(int a[],int n);
 // 删除线性表中所有值为x的数据元素
 
 void deleteSpecialNumber(SqlList *list,int num);
+// 有序表中删除s和t区间的数字
+void deleteRangeNumber(SqlList *list,int s,int t);
 #endif /* Question_h */
 
 
