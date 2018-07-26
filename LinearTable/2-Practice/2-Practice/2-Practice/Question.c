@@ -22,3 +22,15 @@ bool deleteMinNumber(SqlList *list,int num) {
     list->length--;
     return true;
 }
+
+void swap(int *a,int *b) {
+    int c = *a;
+    *a = *b;
+    *b = c;
+}
+
+void reverseList(int a[],int n) {
+    for (int i = 0; i < n / 2; i++) {
+        swap(&a[i], &a[n - i - 1]);
+    }
+}

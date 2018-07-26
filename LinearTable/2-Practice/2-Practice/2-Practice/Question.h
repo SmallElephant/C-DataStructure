@@ -21,6 +21,9 @@ typedef struct SqlList {
 
 bool deleteMinNumber(SqlList *list,int num);
 
+void swap(int *a,int *b);
+void reverseList(int a[],int n);
+
 #endif /* Question_h */
 
 

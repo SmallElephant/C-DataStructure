@@ -35,10 +35,14 @@ int main(int argc, const char * argv[]) {
 //    printf("%d---%d---%d\n",data.length,(*p).length,p->length);
 //    insertList(&data, 2, 10);
 //    printData(data.data, data.length);
-    
-    SqlList data = {{10,3,1,4,5},5};
-    deleteMinNumber(&data, 5);
-    printData(data.data, data.length);
+     // 2.删除链表中最小的数字
+//    SqlList data = {{10,3,1,4,5},5};
+//    deleteMinNumber(&data, 5);
+//    printData(data.data, data.length);
+    // 3.反转链表中的数字
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    reverseList(arr, 10);
+    printData(arr, 10);
     return 0;
 }
 
