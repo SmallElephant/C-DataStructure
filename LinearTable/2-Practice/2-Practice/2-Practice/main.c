@@ -43,6 +43,11 @@ int main(int argc, const char * argv[]) {
     int arr[] = {1,2,3,4,5,6,7,8,9,10};
     reverseList(arr, 10);
     printData(arr, 10);
+    
+    SqlList list= {{1,2,3,4,5,6,4,4,4,10},10};
+    deleteSpecialNumber(&list, 4);
+    printData(list.data, list.length);
+    
     return 0;
 }
 

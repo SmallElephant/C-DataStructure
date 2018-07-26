@@ -34,3 +34,17 @@ void reverseList(int a[],int n) {
         swap(&a[i], &a[n - i - 1]);
     }
 }
+
+void deleteSpecialNumber(SqlList *list,int num) {
+    int len = list->length;
+    int k = 0;
+    for (int i = 0; i < len; i++) {
+        if (list->data[i] != num) {
+            list->data[k] = list->data[i];
+            k++;
+        }
+    }
+    list->length = k;
+}
+
+

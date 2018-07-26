@@ -19,11 +19,15 @@ typedef struct SqlList {
     int length;
 } SqlList;
 
+void swap(int *a,int *b);
 bool deleteMinNumber(SqlList *list,int num);
 
-void swap(int *a,int *b);
+// 将顺序表的所有元素逆置
 void reverseList(int a[],int n);
 
+// 删除线性表中所有值为x的数据元素
+
+void deleteSpecialNumber(SqlList *list,int num);
 #endif /* Question_h */
 
 
