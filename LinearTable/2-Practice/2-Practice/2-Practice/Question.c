@@ -148,7 +148,7 @@ void searchExchangeInsert(int arr[],int x,int n) {
     int low = 0;
     int high = n - 1;
     int index = -1;
-    while (low <= high) {
+    while (low <= high) { // 查找
         int mid = (low + high) / 2;
         if (arr[mid] > x) {
             high = mid - 1;
@@ -160,16 +160,20 @@ void searchExchangeInsert(int arr[],int x,int n) {
         }
     }
     if (index != -1 && index != n - 1) { // 元素存在，且不是最后一个元素
-        swap(&arr[index], &arr[index+1]);
+        swap(&arr[index], &arr[index+1]); // 交换后继元素
     }
-    if (low > high) {
-        printData(arr, 10);
+    if (low > high) { // 插入元素
         for (int i = n - 1; i > high; i--) {
             arr[i+1] = arr[i];
         }
-        printData(arr, 10);
         arr[high+1] = x;
     }
+}
+
+void leftShift(int arr[],int left,int n) {
+    reverse(arr, 0, n-1, n);
+    reverse(arr, 0, n-left-1, n);
+    reverse(arr, n-left, n-1, n);
 }
 
 

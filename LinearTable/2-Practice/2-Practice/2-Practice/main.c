@@ -63,8 +63,12 @@ int main(int argc, const char * argv[]) {
 //    reverseArr(arr, 4, 6);
 //    printData(arr, 10);
     
-    int arr[] = {1,2,3,4,6,7,8,9,10,0};
-    searchExchangeInsert(arr, 4, 9);
+//    int arr[] = {1,2,3,4,6,7,8,9,10,0};
+//    searchExchangeInsert(arr, 4, 9);
+//    printData(arr, 10);
+    
+    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+    leftShift(arr, 4, 10);
     printData(arr, 10);
     return 0;
 }

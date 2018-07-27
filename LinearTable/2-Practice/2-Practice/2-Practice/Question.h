@@ -51,6 +51,9 @@ void reverseArr(int arr[],int m,int n);
 
 void searchExchangeInsert(int arr[],int x,int n);
 
+// 数组循环左移
+void leftShift(int arr[],int left,int n);
+
 #endif /* Question_h */
 
 
