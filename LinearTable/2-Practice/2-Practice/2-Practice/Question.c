@@ -65,6 +65,7 @@ void deleteRangeNumber(SqlList *list,int s,int t) {
     list->length = i;
 }
 
+// 最简单的方式可以从后向前扫描顺序表，每遇到一个值在s与t之间的元素，则删除该元素，其后所有元素全部前移，移动次数比较多，效率不够高
 void delte_from_sequence(SqlList *list,int s,int t) { // 元素只需要移动一次，效率比较高
     if (s >= t) {
         return;
@@ -79,6 +80,19 @@ void delte_from_sequence(SqlList *list,int s,int t) { // 元素只需要移动�
         }
     }
     list->length = list->length - k;
+}
+
+void delete_same(SqlList *list) { // 有序顺序表的特点，是相同的元素是连续的，找到第一个不连续的数字即可
+    if (list->length <= 1) {
+        return;
+    }
+    int i = 0;
+    for (int j = 1; j < list->length; j++) {
+        if (list->data[i] != list->data[j]) {
+            list->data[++i] = list->data[j];
+        }
+    }
+    list->length = i + 1;
 }
 
 

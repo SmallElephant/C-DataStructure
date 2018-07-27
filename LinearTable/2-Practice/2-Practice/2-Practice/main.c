@@ -52,8 +52,12 @@ int main(int argc, const char * argv[]) {
 //    deleteRangeNumber(&list, 4, 7);
 //    printData(list.data, list.length);
     
-    SqlList list= {{1,2,5,7,5,6,7,8,9,10},10};
-    delte_from_sequence(&list, 5, 7);
+//    SqlList list= {{1,2,5,7,5,6,7,8,9,10},10};
+//    delte_from_sequence(&list, 5, 7);
+//    printData(list.data, list.length);
+    
+    SqlList list= {{1,2,5,5,5,6,7,8,9,10},10};
+    delete_same(&list);
     printData(list.data, list.length);
     return 0;
 }

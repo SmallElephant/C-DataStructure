@@ -33,6 +33,10 @@ void deleteRangeNumber(SqlList *list,int s,int t);
 
 // 删除顺序表中在s和t区间范围的数字
 void delte_from_sequence(SqlList *list,int s,int t);
+
+// 从有序顺序表中删除所有值重复的元素，使表中所有元素的值均不同
+void delete_same(SqlList *list);
+
 #endif /* Question_h */
 
 
