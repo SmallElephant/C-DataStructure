@@ -41,6 +41,11 @@ void delete_same(SqlList *list);
 
 void mergeList(SqlList *list1,SqlList *list2,SqlList *res);
 
+// 已知在一维数组A[m+n]中依次存放着两个线性表，将数组中两个顺序表的位置互换
+
+void reverse(int arr[],int left,int right,int n);
+void reverseArr(int arr[],int m,int n);
+
 #endif /* Question_h */
 
 

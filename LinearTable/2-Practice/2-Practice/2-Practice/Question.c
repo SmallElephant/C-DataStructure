@@ -121,4 +121,20 @@ void mergeList(SqlList *list1,SqlList *list2,SqlList *res) {
     res->length = k;
 }
 
+void reverse(int arr[],int left,int right,int n) { // left 索引开始，right 索引结束
+    if (left >= right || right >= n) {
+        return;
+    }
+    int mid = (right - left) / 2;
+    for (int i = 0; i <= mid; i++) {
+        swap(&arr[left + i], &arr[right - i]);
+    }
+}
+
+void reverseArr(int arr[],int m,int n) {
+    reverse(arr, 0, m+n-1, m+n);
+    reverse(arr, 0, n-1, m+n);
+    reverse(arr, n, m+n-1, m+n);
+}
+
 
