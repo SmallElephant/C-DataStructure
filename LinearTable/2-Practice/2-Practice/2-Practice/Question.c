@@ -8,6 +8,13 @@
 
 #include "Question.h"
 
+void printData(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d  ",arr[i]);
+    }
+    printf("\n");
+}
+
 bool deleteMinNumber(SqlList *list,int num) {
     if (list->length == 0) {
         return false;
@@ -135,6 +142,34 @@ void reverseArr(int arr[],int m,int n) {
     reverse(arr, 0, m+n-1, m+n);
     reverse(arr, 0, n-1, m+n);
     reverse(arr, n, m+n-1, m+n);
+}
+
+void searchExchangeInsert(int arr[],int x,int n) {
+    int low = 0;
+    int high = n - 1;
+    int index = -1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] > x) {
+            high = mid - 1;
+        } else if (arr[mid] < x) {
+            low = mid + 1;
+        } else {
+            index = mid;
+            break;
+        }
+    }
+    if (index != -1 && index != n - 1) { // 元素存在，且不是最后一个元素
+        swap(&arr[index], &arr[index+1]);
+    }
+    if (low > high) {
+        printData(arr, 10);
+        for (int i = n - 1; i > high; i--) {
+            arr[i+1] = arr[i];
+        }
+        printData(arr, 10);
+        arr[high+1] = x;
+    }
 }
 
 

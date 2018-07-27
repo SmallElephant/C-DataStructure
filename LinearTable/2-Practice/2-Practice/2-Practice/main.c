@@ -20,13 +20,6 @@ void insertList(SqlList *list,int i,int data) {
     list->length++;
 }
 
-void printData(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d  ",arr[i]);
-    }
-    printf("\n");
-}
-
 int main(int argc, const char * argv[]) {
     // insert code here...
     //1.链表插入
@@ -66,8 +59,12 @@ int main(int argc, const char * argv[]) {
 //    mergeList(&list1, &list2, &res);
 //    printData(res.data, res.length);
     
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    reverseArr(arr, 4, 6);
+//    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+//    reverseArr(arr, 4, 6);
+//    printData(arr, 10);
+    
+    int arr[] = {1,2,3,4,6,7,8,9,10,0};
+    searchExchangeInsert(arr, 4, 9);
     printData(arr, 10);
     return 0;
 }

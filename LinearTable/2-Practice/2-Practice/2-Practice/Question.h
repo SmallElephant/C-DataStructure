@@ -19,6 +19,7 @@ typedef struct SqlList {
     int length;
 } SqlList;
 
+void printData(int arr[], int n);
 void swap(int *a,int *b);
 bool deleteMinNumber(SqlList *list,int num);
 
@@ -45,6 +46,10 @@ void mergeList(SqlList *list1,SqlList *list2,SqlList *res);
 
 void reverse(int arr[],int left,int right,int n);
 void reverseArr(int arr[],int m,int n);
+
+// 顺序表中查找到x元素，如果存在则与后继元素交换，否则将其插入当前的位置，并将元素插入
+
+void searchExchangeInsert(int arr[],int x,int n);
 
 #endif /* Question_h */
 
