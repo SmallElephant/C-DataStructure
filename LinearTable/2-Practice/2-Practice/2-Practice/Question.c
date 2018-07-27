@@ -53,14 +53,32 @@ void deleteRangeNumber(SqlList *list,int s,int t) {
     }
     int len = list->length;
     int i;
-    for (i = 0; i < len && list->data[i] < s; i++) {}
+    for (i = 0; i < len && list->data[i] < s; i++) { // 寻找≥s的第一个元素
+        
+    }
     int j;
-    for (j = i; j < len && list->data[j] <= t; j++) {
+    for (j = i; j < len && list->data[j] <= t; j++) { // 寻找大于>t的第一个元素
     }
     for (; j < len; j++,i++) {
         list->data[i] = list->data[j];
     }
     list->length = i;
+}
+
+void delte_from_sequence(SqlList *list,int s,int t) { // 元素只需要移动一次，效率比较高
+    if (s >= t) {
+        return;
+    }
+    int len = list->length;
+    int k = 0;
+    for (int i = 0; i < len; i++) {
+        if (list->data[i] >=s && list->data[i] <= t) {
+            k++;
+        } else {
+            list->data[i-k] = list->data[i]; // 重点可以看看
+        }
+    }
+    list->length = list->length - k;
 }
 
 

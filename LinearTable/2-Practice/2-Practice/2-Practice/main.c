@@ -48,8 +48,12 @@ int main(int argc, const char * argv[]) {
 //    deleteSpecialNumber(&list, 4);
 //    printData(list.data, list.length);
     // 5.有序表删除一定范围内的元素
-    SqlList list= {{1,2,3,4,5,6,7,8,9,10},10};
-    deleteRangeNumber(&list, 4, 7);
+//    SqlList list= {{1,2,3,4,5,6,7,8,9,10},10};
+//    deleteRangeNumber(&list, 4, 7);
+//    printData(list.data, list.length);
+    
+    SqlList list= {{1,2,5,7,5,6,7,8,9,10},10};
+    delte_from_sequence(&list, 5, 7);
     printData(list.data, list.length);
     return 0;
 }

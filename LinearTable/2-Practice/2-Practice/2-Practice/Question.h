@@ -30,6 +30,9 @@ void reverseList(int a[],int n);
 void deleteSpecialNumber(SqlList *list,int num);
 // 有序表中删除s和t区间的数字
 void deleteRangeNumber(SqlList *list,int s,int t);
+
+// 删除顺序表中在s和t区间范围的数字
+void delte_from_sequence(SqlList *list,int s,int t);
 #endif /* Question_h */
 
 
