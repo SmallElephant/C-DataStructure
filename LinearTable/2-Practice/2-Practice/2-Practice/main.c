@@ -56,9 +56,15 @@ int main(int argc, const char * argv[]) {
 //    delte_from_sequence(&list, 5, 7);
 //    printData(list.data, list.length);
     
-    SqlList list= {{1,2,5,5,5,6,7,8,9,10},10};
-    delete_same(&list);
-    printData(list.data, list.length);
+//    SqlList list= {{1,2,5,5,5,6,7,8,9,10},10};
+//    delete_same(&list);
+//    printData(list.data, list.length);
+    
+    SqlList list1= {{1,3,5,7,9},5};
+    SqlList list2 = {{2,4,6,8,10},5};
+    SqlList res = {{},0};
+    mergeList(&list1, &list2, &res);
+    printData(res.data, res.length);
     return 0;
 }
 

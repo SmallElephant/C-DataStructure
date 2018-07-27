@@ -95,4 +95,30 @@ void delete_same(SqlList *list) { // 有序顺序表的特点，是相同的元�
     list->length = i + 1;
 }
 
+void mergeList(SqlList *list1,SqlList *list2,SqlList *res) {
+    if (list1->length == 0) {
+        res = list2;
+    }
+    if (list2->length == 0) {
+        res = list1;
+    }
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    while (i < list1->length && j < list2->length) {
+        if (list1->data[i] < list2->data[j]) {
+            res->data[k++] = list1->data[i++];
+        } else {
+            res->data[k++] = list2->data[j++];
+        }
+    }
+    while (i < list1->length) {
+        res->data[k++] = list1->data[i++];
+    }
+    while (j < list2->length) {
+        res->data[k++] = list2->data[j++];
+    }
+    res->length = k;
+}
+
 

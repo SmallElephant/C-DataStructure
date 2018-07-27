@@ -37,6 +37,10 @@ void delte_from_sequence(SqlList *list,int s,int t);
 // 从有序顺序表中删除所有值重复的元素，使表中所有元素的值均不同
 void delete_same(SqlList *list);
 
+// 将两个有序顺序表合并成一个新的有序顺序表,并由函数返回结果顺序表
+
+void mergeList(SqlList *list1,SqlList *list2,SqlList *res);
+
 #endif /* Question_h */
 
 
