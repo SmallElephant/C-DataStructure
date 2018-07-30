@@ -54,6 +54,9 @@ void searchExchangeInsert(int arr[],int x,int n);
 // 数组循环左移
 void leftShift(int arr[],int left,int n);
 
+// 寻找两个升序序列，B的中位数
+int mid_search(int a[],int b[],int n);
+
 #endif /* Question_h */
 
 

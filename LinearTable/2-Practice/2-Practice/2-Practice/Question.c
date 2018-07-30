@@ -176,4 +176,32 @@ void leftShift(int arr[],int left,int n) {
     reverse(arr, n-left, n-1, n);
 }
 
+int mid_search(int a[],int b[],int n) {
+    int s1=0,d1=n-1,m1,s2=0,d2=n-1,m2;
+    while (s1 != d1 || s2 != d2) {
+        m1=(s1+d1)/2;
+        m2=(s2+d2)/2;
+        if (a[m1]==b[m2]) { // 如果两个序列的中位数相等，直接返回
+            return a[m1];
+        } else if (a[m1]<b[m2]) { // 如果a的中位数小于b的中位数，舍弃小于a的部分，舍弃大于b的部分，这是由中位数的性质决定的
+            if ((s1+d1)%2==0) { // 元素的个数为奇数
+                s1=m1;
+                d2=m2;
+            } else {
+                s1=m1+1;
+                d2=m2;
+            }
+        } else { // a[m1] > b[m2] 如果a的中位数大于b的中位数，舍弃大于a的部分，舍弃小于b的部分
+            if ((s1+d1)%2==0) { // 元素的个数为奇数
+                d1=m1;
+                s2=m2;
+            } else {
+                d1=m1;
+                s2=m2+1;
+            }
+        }
+    }
+    return a[s1] < b[s2] ? a[s1] : a[s2];
+}
+
 

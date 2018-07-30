@@ -67,9 +67,14 @@ int main(int argc, const char * argv[]) {
 //    searchExchangeInsert(arr, 4, 9);
 //    printData(arr, 10);
     
-    int arr[] = {1,2,3,4,5,6,7,8,9,10};
-    leftShift(arr, 4, 10);
-    printData(arr, 10);
+//    int arr[] = {1,2,3,4,5,6,7,8,9,10};
+//    leftShift(arr, 4, 10);
+//    printData(arr, 10);
+    
+    int s1[] = {11,13,15,17,19};
+    int s2[] = {2,4,6,8,20};
+    int mid = mid_search(s1, s2, 5);
+    printf("两个升序序列的中位数是:%d\n",mid);
     return 0;
 }
 
