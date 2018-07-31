@@ -30,6 +30,8 @@ void delete_node_normal(ListNode *list,int x);
 
 // 设L为带头结点的单链表，编写算法实现从尾到头反向输出每个结点的值
 
+void reverse_print(ListNode *list);
+
 // 在带头结点的单链表L中删除一个最小值结点的高效算法
 
 // 将带头结点的单链表就地逆置

@@ -44,3 +44,12 @@ void delete_node_normal(ListNode *list,int x) {
         }
     }
 }
+
+// 逆序输出链表的值可以通过栈来实现，也可以递归实现
+
+void reverse_print(ListNode *list) {
+    if (list->next != NULL) {
+        reverse_print(list->next);
+    }
+    printf("%d  ",list->val);
+}

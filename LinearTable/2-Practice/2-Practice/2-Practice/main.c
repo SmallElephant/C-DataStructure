@@ -94,22 +94,37 @@ int main(int argc, const char * argv[]) {
 //    printList(&list);
 //    delete_node_x(&list, 2);
 //    printList(&list);
-    ListNode listHead = {-1,NULL};
+//    ListNode listHead = {-1,NULL};
+//    ListNode list1 = {1,NULL};
+//    ListNode list2 = {2,NULL};
+//    ListNode list3 = {3,NULL};
+//    ListNode list4 = {2,NULL};
+//    ListNode list5 = {4,NULL};
+//    ListNode list6 = {5,NULL};
+//    listHead.next = &list1;
+//    list1.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    list5.next = &list6;
+//    printList(&listHead);
+//    delete_node_normal(&listHead, 2);
+//    printList(&listHead);
+    
     ListNode list1 = {1,NULL};
     ListNode list2 = {2,NULL};
     ListNode list3 = {3,NULL};
-    ListNode list4 = {2,NULL};
-    ListNode list5 = {4,NULL};
-    ListNode list6 = {5,NULL};
-    listHead.next = &list1;
+    ListNode list4 = {4,NULL};
+    ListNode list5 = {5,NULL};
+    ListNode list6 = {6,NULL};
     list1.next = &list2;
     list2.next = &list3;
     list3.next = &list4;
     list4.next = &list5;
     list5.next = &list6;
-    printList(&listHead);
-    delete_node_normal(&listHead, 2);
-    printList(&listHead);
+    printList(&list1);
+    reverse_print(&list1);
+    printf("\n");
     return 0;
 }
 
