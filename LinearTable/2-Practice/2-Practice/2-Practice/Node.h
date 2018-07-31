@@ -38,6 +38,8 @@ void delete_min_node(ListNode *list);
 
 // 将带头结点的单链表就地逆置
 
+ListNode *reverse_list(ListNode *list);
+
 // 有一个带头结点的单链表L，设计一个算法使其元素递增有序
 
 // 设在一个带表头结点的单链表中所有元素结点数值无序，删除表中所有结余给定的两个值之间的元素的元素

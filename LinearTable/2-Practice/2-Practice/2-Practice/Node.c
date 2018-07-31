@@ -72,3 +72,15 @@ void delete_min_node(ListNode *list) {
     }
     minPre->next = min->next;
 }
+
+ListNode *reverse_list(ListNode *list) {
+    ListNode *pre = NULL;
+    ListNode *node = list;
+    while (node != NULL) {
+        ListNode *next = node->next;
+        node->next = pre;
+        pre = node;
+        node = next;
+    }
+    return pre;
+}
