@@ -34,6 +34,8 @@ void reverse_print(ListNode *list);
 
 // 在带头结点的单链表L中删除一个最小值结点的高效算法
 
+void delete_min_node(ListNode *list);
+
 // 将带头结点的单链表就地逆置
 
 // 有一个带头结点的单链表L，设计一个算法使其元素递增有序

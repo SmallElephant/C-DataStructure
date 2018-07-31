@@ -53,3 +53,22 @@ void reverse_print(ListNode *list) {
     }
     printf("%d  ",list->val);
 }
+
+// 删除最小的结点
+void delete_min_node(ListNode *list) {
+    ListNode *pre = list;
+    ListNode *node = list->next;
+    ListNode *minPre = list;
+    ListNode *min = list->next;
+    while (node != NULL) {
+        if (node->val < min->val) {
+            minPre = pre;
+            min = node;
+            pre = node;
+            node = node->next;
+        }
+        pre = node;
+        node = node->next;
+    }
+    minPre->next = min->next;
+}
