@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "Question.h"
+#include "Node.h"
 
 void insertList(SqlList *list,int i,int data) {
     if (i < 0 || i > list->length) {
@@ -71,14 +72,44 @@ int main(int argc, const char * argv[]) {
 //    leftShift(arr, 4, 10);
 //    printData(arr, 10);
     
-    int s1[] = {11,13,15,17,19};
-    int s2[] = {2,4,6,8,20};
-    int mid = mid_search(s1, s2, 5);
-    printf("两个升序序列的中位数是:%d\n",mid);
-    int marjority[] = {3,4,5,4,7,4,9,4,4};
-    int num = majority(marjority, 9);
-    printData(marjority, 9);
-    printf("majority的大多数数字:%d\n",num);
+//    int s1[] = {11,13,15,17,19};
+//    int s2[] = {2,4,6,8,20};
+//    int mid = mid_search(s1, s2, 5);
+//    printf("两个升序序列的中位数是:%d\n",mid);
+//    int marjority[] = {3,4,5,4,7,4,9,4,4};
+//    int num = majority(marjority, 9);
+//    printData(marjority, 9);
+//    printf("majority的大多数数字:%d\n",num);
+//    ListNode list = {1,NULL};
+//    ListNode list2 = {2,NULL};
+//    ListNode list3 = {3,NULL};
+//    ListNode list4 = {2,NULL};
+//    ListNode list5 = {4,NULL};
+//    ListNode list6 = {5,NULL};
+//    list.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    list5.next = &list6;
+//    printList(&list);
+//    delete_node_x(&list, 2);
+//    printList(&list);
+    ListNode listHead = {-1,NULL};
+    ListNode list1 = {1,NULL};
+    ListNode list2 = {2,NULL};
+    ListNode list3 = {3,NULL};
+    ListNode list4 = {2,NULL};
+    ListNode list5 = {4,NULL};
+    ListNode list6 = {5,NULL};
+    listHead.next = &list1;
+    list1.next = &list2;
+    list2.next = &list3;
+    list3.next = &list4;
+    list4.next = &list5;
+    list5.next = &list6;
+    printList(&listHead);
+    delete_node_normal(&listHead, 2);
+    printList(&listHead);
     return 0;
 }
 
