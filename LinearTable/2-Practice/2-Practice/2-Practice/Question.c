@@ -204,4 +204,37 @@ int mid_search(int a[],int b[],int n) {
     return a[s1] < b[s2] ? a[s1] : a[s2];
 }
 
+// 设置当前的大多数数字为num，数量为count，遍历数组如果num相同则count加1，否则count减1
+int majority(int a[],int n) { //3,4,5,4,7,8,9,4,4}
+    if (n == 0) {
+        return -1;
+    }
+    int num = a[0];
+    int count = 1;
+    for (int i = 1; i < n; i++) {
+        if (a[i] == num) { // 如果是候选主元素，count总数加1
+            count++;
+        } else {
+            if (count > 0) { // 如果非候选主元素，count大于0，减1
+                count--;
+            } else {
+                num=a[i];
+                count=1;
+            }
+        }
+    }
+    if (count > 0) {
+        count = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] == num) {
+                count++;
+            }
+        }
+    }
+    if (count > n/2) {
+        return num;
+    }
+    return -1;
+}
+
 

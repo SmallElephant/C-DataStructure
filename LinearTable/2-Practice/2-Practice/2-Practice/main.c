@@ -75,6 +75,10 @@ int main(int argc, const char * argv[]) {
     int s2[] = {2,4,6,8,20};
     int mid = mid_search(s1, s2, 5);
     printf("两个升序序列的中位数是:%d\n",mid);
+    int marjority[] = {3,4,5,4,7,4,9,4,4};
+    int num = majority(marjority, 9);
+    printData(marjority, 9);
+    printf("majority的大多数数字:%d\n",num);
     return 0;
 }
 

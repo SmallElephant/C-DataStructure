@@ -57,6 +57,9 @@ void leftShift(int arr[],int left,int n);
 // 寻找两个升序序列，B的中位数
 int mid_search(int a[],int b[],int n);
 
+// 寻找数组中的大多数数字
+int majority(int a[],int n);
+
 #endif /* Question_h */
 
 
