@@ -259,8 +259,7 @@ int main(int argc, const char * argv[]) {
     list5.next = &list6;
     list6.next = &list7;
     list7.next = &list8;
-    discreate2(&listHead);
-
+    discreate3(&listHead);
     return 0;
 }
 

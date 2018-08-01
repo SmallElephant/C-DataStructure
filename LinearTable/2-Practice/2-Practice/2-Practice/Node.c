@@ -239,4 +239,24 @@ void discreate2(ListNode *list) {
     printList(list);
 }
 
+void discreate3(ListNode *list) {
+    ListNode *head2 = (ListNode *)malloc(sizeof(ListNode));
+    head2->val = -1;
+    head2->next = NULL;
+    ListNode *p = list->next; // 工作指针
+    ListNode *ra = list;
+    while (p != NULL) {
+        ra->next = p;
+        ra = p;
+        p = p->next; // B链表需要用到的数据
+        ListNode *tmp = p->next;
+        p->next = head2->next;
+        head2->next = p;
+        p = tmp;
+    }
+    ra->next = NULL;
+    printList(head2);
+    printList(list);
+}
+
 

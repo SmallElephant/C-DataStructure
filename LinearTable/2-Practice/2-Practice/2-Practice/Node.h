@@ -61,3 +61,4 @@ void delete_min_sequence(ListNode *list);
 
 void discreate(ListNode *list);
 void discreate2(ListNode *list);
+void discreate3(ListNode *list);
