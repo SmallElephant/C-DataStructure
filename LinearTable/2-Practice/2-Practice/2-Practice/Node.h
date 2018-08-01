@@ -53,3 +53,6 @@ void delete_range(ListNode *list, int min, int max);
 // 给定两个单链表，找出两个链表的公共结点
 
 ListNode *search_first_common(ListNode *list1,ListNode *list2);
+
+// 按照递增顺序输出各个结点的数据元素
+void delete_min_sequence(ListNode *list);

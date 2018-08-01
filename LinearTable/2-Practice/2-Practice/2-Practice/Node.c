@@ -152,3 +152,27 @@ ListNode *search_first_common(ListNode *list1,ListNode *list2) {
     }
     return longList;
 }
+
+void delete_min_sequence(ListNode *list) {
+    ListNode *head = list;
+    while (head != NULL) {
+        ListNode *pre = head;
+        if (pre && pre->next == NULL) {
+            printf("%d  ",pre->val);
+            head = NULL;
+        } else {
+            ListNode *p = pre->next;
+            while (p && p->next != NULL) {
+                if (p->next->val < pre->next->val) {
+                    pre = p;
+                }
+                p = p->next;
+            }
+            printf("%d  ",pre->next->val);
+            ListNode *min = pre->next;
+            pre->next = min->next;
+        }
+    }
+    printf("\n");
+}
+
