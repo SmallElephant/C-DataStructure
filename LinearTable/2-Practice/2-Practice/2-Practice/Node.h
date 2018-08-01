@@ -56,3 +56,8 @@ ListNode *search_first_common(ListNode *list1,ListNode *list2);
 
 // 按照递增顺序输出各个结点的数据元素
 void delete_min_sequence(ListNode *list);
+
+// 将链表分为两个链表，一个包含序号为奇数的数字，一个包含序号为偶数的数字
+
+void discreate(ListNode *list);
+void discreate2(ListNode *list);

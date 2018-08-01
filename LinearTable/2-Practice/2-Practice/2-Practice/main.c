@@ -215,16 +215,52 @@ int main(int argc, const char * argv[]) {
 //    } else {
 //        printf("无相同公共结点");
 //    }
-    ListNode list1 = {5,NULL};
-    ListNode list2 = {3,NULL};
-    ListNode list3 = {1,NULL};
-    ListNode list4 = {2,NULL};
-    ListNode list5 = {4,NULL};
+//    ListNode list1 = {5,NULL};
+//    ListNode list2 = {3,NULL};
+//    ListNode list3 = {1,NULL};
+//    ListNode list4 = {2,NULL};
+//    ListNode list5 = {4,NULL};
+//    list1.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    delete_min_sequence(&list1);
+    
+//    ListNode list1 = {1,NULL};
+//    ListNode list2 = {2,NULL};
+//    ListNode list3 = {3,NULL};
+//    ListNode list4 = {4,NULL};
+//    ListNode list5 = {5,NULL};
+//    ListNode list6 = {6,NULL};
+//    ListNode list7 = {7,NULL};
+//    ListNode list8 = {8,NULL};
+//    list1.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    list5.next = &list6;
+//    list6.next = &list7;
+//    list7.next = &list8;
+//    discreate(&list1);
+    ListNode listHead = {-1,NULL};
+    ListNode list1 = {1,NULL};
+    ListNode list2 = {2,NULL};
+    ListNode list3 = {3,NULL};
+    ListNode list4 = {4,NULL};
+    ListNode list5 = {5,NULL};
+    ListNode list6 = {6,NULL};
+    ListNode list7 = {7,NULL};
+    ListNode list8 = {8,NULL};
+    listHead.next = &list1;
     list1.next = &list2;
     list2.next = &list3;
     list3.next = &list4;
     list4.next = &list5;
-    delete_min_sequence(&list1);
+    list5.next = &list6;
+    list6.next = &list7;
+    list7.next = &list8;
+    discreate2(&listHead);
+
     return 0;
 }
 

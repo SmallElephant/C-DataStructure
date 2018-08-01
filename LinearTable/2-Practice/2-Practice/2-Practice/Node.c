@@ -7,6 +7,7 @@
 //
 
 #include "Node.h"
+#include <stdlib.h>
 
 void printList(ListNode *head) {
     ListNode *node = head;
@@ -175,4 +176,67 @@ void delete_min_sequence(ListNode *list) {
     }
     printf("\n");
 }
+
+void discreate(ListNode *list) {
+    ListNode *list1 = NULL;
+    ListNode *list2 = NULL;
+    ListNode *head1 = (ListNode *)malloc(sizeof(ListNode));
+    ListNode *head2 = (ListNode *)malloc(sizeof(ListNode));
+    ListNode *p = list;
+    int i = 0;
+    while (p != NULL) {
+        i++;
+        if (i%2==1) { // 如果序号是奇数
+            if (i == 1) {
+                head1->val = p->val;
+                head1->next = NULL;
+                list1 = head1;
+            } else {
+                list1->next = p;
+                list1 = p;
+            }
+        } else {
+            if (i == 2) {
+                head2->val = p->val;
+                head2->next = NULL;
+                list2 = head2;
+            } else {
+                list2->next = p;
+                list2 = p;
+            }
+        }
+        p = p->next;
+    }
+    list1->next = NULL;
+    list2->next = NULL;
+    printList(head1);
+    printList(head2);
+}
+
+
+void discreate2(ListNode *list) {
+    ListNode *head2 = (ListNode *)malloc(sizeof(ListNode));
+    head2->val = -1;
+    head2->next = NULL;
+    ListNode *rb = head2;
+    ListNode *ra = list;
+    ListNode *p = list->next;
+    int i = 0;
+    while (p != NULL) {
+        i++;
+        if (i%2==1) { // 如果序号是奇数
+            ra->next = p;
+            ra = p;
+        } else {
+            rb->next = p;
+            rb = p;
+        }
+        p = p->next;
+    }
+    ra->next = NULL;
+    rb->next = NULL;
+    printList(head2);
+    printList(list);
+}
+
 
