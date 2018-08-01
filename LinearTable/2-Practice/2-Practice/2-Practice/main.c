@@ -142,19 +142,37 @@ int main(int argc, const char * argv[]) {
 //    delete_min_node(&list1);
 //    printList(&listHead);
     
-    ListNode list1 = {1,NULL};
-    ListNode list2 = {2,NULL};
-    ListNode list3 = {3,NULL};
-    ListNode list4 = {4,NULL};
-    ListNode list5 = {5,NULL};
-    ListNode list6 = {6,NULL};
+//    ListNode list1 = {1,NULL};
+//    ListNode list2 = {2,NULL};
+//    ListNode list3 = {3,NULL};
+//    ListNode list4 = {4,NULL};
+//    ListNode list5 = {5,NULL};
+//    ListNode list6 = {6,NULL};
+//    list1.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    list5.next = &list6;
+//    ListNode *head = reverse_list(&list1);
+//    printList(head);
+    
+    // 链表
+    ListNode listHead = {-1,NULL};
+    ListNode list1 = {6,NULL};
+    ListNode list2 = {5,NULL};
+    ListNode list3 = {4,NULL};
+    ListNode list4 = {2,NULL};
+    ListNode list5 = {1,NULL};
+    ListNode list6 = {9,NULL};
+    listHead.next = &list1;
     list1.next = &list2;
     list2.next = &list3;
     list3.next = &list4;
     list4.next = &list5;
     list5.next = &list6;
-    ListNode *head = reverse_list(&list1);
-    printList(head);
+    printList(&listHead);
+    sort_list(&listHead);
+    printList(&listHead);
     return 0;
 }
 

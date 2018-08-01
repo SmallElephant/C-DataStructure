@@ -84,3 +84,21 @@ ListNode *reverse_list(ListNode *list) {
     }
     return pre;
 }
+
+void sort_list(ListNode *list) {
+    ListNode *p = list->next;
+    ListNode *q = p->next; // 持有p的后继结点指针
+    ListNode *pre;
+    p->next = NULL;
+    p = q;
+    while (p != NULL) {
+        q = p->next;
+        pre = list;
+        while (pre->next != NULL && pre->next->val < p->val) {
+            pre = pre->next;
+        }
+        p->next = pre->next;
+        pre->next = p;
+        p = q;
+    }
+}

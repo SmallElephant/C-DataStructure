@@ -42,6 +42,8 @@ ListNode *reverse_list(ListNode *list);
 
 // 有一个带头结点的单链表L，设计一个算法使其元素递增有序
 
+void sort_list(ListNode *list);
+
 // 设在一个带表头结点的单链表中所有元素结点数值无序，删除表中所有结余给定的两个值之间的元素的元素
 
 // 给定两个单链表，找出两个链表的公共结点
