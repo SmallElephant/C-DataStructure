@@ -62,3 +62,6 @@ void delete_min_sequence(ListNode *list);
 void discreate(ListNode *list);
 void discreate2(ListNode *list);
 void discreate3(ListNode *list);
+
+// 删除单链表中相同的数据
+void delete_repeat(ListNode *list);

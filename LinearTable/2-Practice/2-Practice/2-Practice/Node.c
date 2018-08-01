@@ -259,4 +259,17 @@ void discreate3(ListNode *list) {
     printList(list);
 }
 
+void delete_repeat(ListNode *list) {
+    ListNode *p = list;
+    while (p->next != NULL) {
+        if (p->val != p->next->val) {
+            p = p->next;
+        } else {
+            p->next = p->next->next;
+        }
+    }
+    printList(list);
+}
+
+
 

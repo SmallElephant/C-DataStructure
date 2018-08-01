@@ -242,16 +242,33 @@ int main(int argc, const char * argv[]) {
 //    list6.next = &list7;
 //    list7.next = &list8;
 //    discreate(&list1);
-    ListNode listHead = {-1,NULL};
-    ListNode list1 = {1,NULL};
-    ListNode list2 = {2,NULL};
-    ListNode list3 = {3,NULL};
-    ListNode list4 = {4,NULL};
-    ListNode list5 = {5,NULL};
-    ListNode list6 = {6,NULL};
-    ListNode list7 = {7,NULL};
-    ListNode list8 = {8,NULL};
-    listHead.next = &list1;
+//    ListNode listHead = {-1,NULL};
+//    ListNode list1 = {1,NULL};
+//    ListNode list2 = {2,NULL};
+//    ListNode list3 = {3,NULL};
+//    ListNode list4 = {4,NULL};
+//    ListNode list5 = {5,NULL};
+//    ListNode list6 = {6,NULL};
+//    ListNode list7 = {7,NULL};
+//    ListNode list8 = {8,NULL};
+//    listHead.next = &list1;
+//    list1.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    list5.next = &list6;
+//    list6.next = &list7;
+//    list7.next = &list8;
+//    discreate3(&listHead);
+    
+    ListNode list1 = {7,NULL};
+    ListNode list2 = {10,NULL};
+    ListNode list3 = {10,NULL};
+    ListNode list4 = {21,NULL};
+    ListNode list5 = {30,NULL};
+    ListNode list6 = {42,NULL};
+    ListNode list7 = {42,NULL};
+    ListNode list8 = {42,NULL};
     list1.next = &list2;
     list2.next = &list3;
     list3.next = &list4;
@@ -259,7 +276,7 @@ int main(int argc, const char * argv[]) {
     list5.next = &list6;
     list6.next = &list7;
     list7.next = &list8;
-    discreate3(&listHead);
+    delete_repeat(&list1);
     return 0;
 }
 
