@@ -20,6 +20,8 @@ typedef struct ListNode {
 
 void printList(ListNode *head);
 
+int list_length(ListNode *list);
+
 // 设计一个递归算法,删除不带头结点的单链表L中所有值为x的值
 
 void delete_node_x(ListNode *list,int x);
@@ -49,3 +51,5 @@ void sort_list(ListNode *list);
 void delete_range(ListNode *list, int min, int max);
 
 // 给定两个单链表，找出两个链表的公共结点
+
+ListNode *search_first_common(ListNode *list1,ListNode *list2);

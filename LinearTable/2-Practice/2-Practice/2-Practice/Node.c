@@ -17,6 +17,16 @@ void printList(ListNode *head) {
     printf("\n");
 }
 
+int list_length(ListNode *list) {
+    ListNode *p = list;
+    int count = 0;
+    while (p != NULL) {
+        p = p->next;
+        count++;
+    }
+    return count;
+}
+
 void delete_node_x(ListNode *list,int x) {
     if (list == NULL) {
         return;
@@ -113,4 +123,32 @@ void delete_range(ListNode *list, int min, int max) {
         }
         p = p->next;
     }
+}
+
+
+ListNode *search_first_common(ListNode *list1,ListNode *list2) {
+    // 如果两个链表有一个公共结点，那么该公共结点之后的所有结点是重合的，即它们的最后一个节点必然是重合的
+    int len1 = list_length(list1);
+    int len2 = list_length(list2);
+    int diff = 0;
+    ListNode *longList;
+    ListNode *shortList;
+    if (len1 > len2) {
+        diff = len1 - len2;
+        longList = list1;
+        shortList = list2;
+    } else {
+        diff = len2 - len1;
+        longList = list2;
+        shortList = list1;
+    }
+    for (int i = 0; i < diff; i++) {
+        longList = longList->next;
+    }
+    // 同步，寻找到一个相同的结点
+    while (longList && shortList && longList->val != shortList->val) {
+        longList = longList->next;
+        shortList = shortList->next;
+    }
+    return longList;
 }
