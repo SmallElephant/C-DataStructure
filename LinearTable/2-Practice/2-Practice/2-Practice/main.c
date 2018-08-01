@@ -157,6 +157,24 @@ int main(int argc, const char * argv[]) {
 //    printList(head);
     
     // 链表
+//    ListNode listHead = {-1,NULL};
+//    ListNode list1 = {6,NULL};
+//    ListNode list2 = {5,NULL};
+//    ListNode list3 = {4,NULL};
+//    ListNode list4 = {2,NULL};
+//    ListNode list5 = {1,NULL};
+//    ListNode list6 = {9,NULL};
+//    listHead.next = &list1;
+//    list1.next = &list2;
+//    list2.next = &list3;
+//    list3.next = &list4;
+//    list4.next = &list5;
+//    list5.next = &list6;
+//    printList(&listHead);
+//    sort_list(&listHead);
+//    printList(&listHead);
+    
+    // 删除链表指定范围的值
     ListNode listHead = {-1,NULL};
     ListNode list1 = {6,NULL};
     ListNode list2 = {5,NULL};
@@ -171,7 +189,7 @@ int main(int argc, const char * argv[]) {
     list4.next = &list5;
     list5.next = &list6;
     printList(&listHead);
-    sort_list(&listHead);
+    delete_range(&listHead, 3, 7);
     printList(&listHead);
     return 0;
 }

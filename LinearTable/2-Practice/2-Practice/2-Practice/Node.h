@@ -46,4 +46,6 @@ void sort_list(ListNode *list);
 
 // 设在一个带表头结点的单链表中所有元素结点数值无序，删除表中所有结余给定的两个值之间的元素的元素
 
+void delete_range(ListNode *list, int min, int max);
+
 // 给定两个单链表，找出两个链表的公共结点

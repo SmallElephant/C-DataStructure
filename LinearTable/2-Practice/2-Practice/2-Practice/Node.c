@@ -89,16 +89,28 @@ void sort_list(ListNode *list) {
     ListNode *p = list->next;
     ListNode *q = p->next; // 持有p的后继结点指针
     ListNode *pre;
-    p->next = NULL;
+    p->next = NULL; // 构造只有一个结点的有序表
     p = q;
     while (p != NULL) {
         q = p->next;
         pre = list;
-        while (pre->next != NULL && pre->next->val < p->val) {
+        while (pre->next != NULL && pre->next->val < p->val) { // 在有序表中找到p结点的插入位置
             pre = pre->next;
         }
         p->next = pre->next;
         pre->next = p;
         p = q;
+    }
+}
+
+void delete_range(ListNode *list, int min, int max) {
+    ListNode *pre = list;
+    ListNode *p = list->next; // 检测指针
+    while (p != NULL) {
+        if (p->val > min && p->val < max) {
+            pre->next = p->next;
+            pre = p;
+        }
+        p = p->next;
     }
 }
