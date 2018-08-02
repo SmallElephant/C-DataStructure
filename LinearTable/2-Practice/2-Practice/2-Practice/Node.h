@@ -65,3 +65,8 @@ void discreate3(ListNode *list);
 
 // 删除单链表中相同的数据
 void delete_repeat(ListNode *list);
+
+// 设A和B是两个单链表，其中元素递增有序，设计一个算法从A和B中公共元素产生单链表C，要求不破坏
+// A,B的结点
+
+ListNode *get_common_list(ListNode *list1,ListNode *list2);

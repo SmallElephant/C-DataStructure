@@ -260,15 +260,16 @@ int main(int argc, const char * argv[]) {
 //    list6.next = &list7;
 //    list7.next = &list8;
 //    discreate3(&listHead);
-    
-    ListNode list1 = {7,NULL};
-    ListNode list2 = {10,NULL};
-    ListNode list3 = {10,NULL};
-    ListNode list4 = {21,NULL};
-    ListNode list5 = {30,NULL};
-    ListNode list6 = {42,NULL};
-    ListNode list7 = {42,NULL};
-    ListNode list8 = {42,NULL};
+    ListNode list = {-1,NULL};
+    ListNode list1 = {1,NULL};
+    ListNode list2 = {3,NULL};
+    ListNode list3 = {8,NULL};
+    ListNode list4 = {11,NULL};
+    ListNode list5 = {20,NULL};
+    ListNode list6 = {40,NULL};
+    ListNode list7 = {60,NULL};
+    ListNode list8 = {80,NULL};
+    list.next = &list1;
     list1.next = &list2;
     list2.next = &list3;
     list3.next = &list4;
@@ -276,7 +277,17 @@ int main(int argc, const char * argv[]) {
     list5.next = &list6;
     list6.next = &list7;
     list7.next = &list8;
-    delete_repeat(&list1);
+    ListNode node = {-1,NULL};
+    ListNode node1 = {1,NULL};
+    ListNode node2 = {5,NULL};
+    ListNode node3 = {8,NULL};
+    ListNode node4 = {11,NULL};
+    node.next = &node1;
+    node1.next = &node2;
+    node2.next = &node3;
+    node3.next = &node4;
+    ListNode *common = get_common_list(&list, &node);
+    printList(common);
     return 0;
 }
 

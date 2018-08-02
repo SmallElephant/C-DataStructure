@@ -271,5 +271,29 @@ void delete_repeat(ListNode *list) {
     printList(list);
 }
 
+ListNode *get_common_list(ListNode *list1,ListNode *list2) {
+    ListNode *common = (ListNode *)malloc(sizeof(ListNode));
+    common->val = -1;
+    ListNode *tail = common;
+    ListNode *p = list1->next;
+    ListNode *q = list2->next;
+    while (p != NULL && q != NULL) {
+        if (p->val < q->val) { // p的值小于q的值，向前移动指针
+            p = p->next;
+        } else if (p->val > q->val) {
+            q = q->next;
+        } else {
+            ListNode *node = (ListNode *)malloc(sizeof(ListNode));
+            node->val = p->val;
+            node->next = NULL;
+            tail->next = node;
+            tail = node;
+            p = p->next;
+            q = q->next;
+        }
+    }
+    return common;
+}
+
 
 
